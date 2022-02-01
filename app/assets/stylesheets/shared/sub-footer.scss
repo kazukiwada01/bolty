@@ -1,0 +1,26 @@
+.sub-footer {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  background-color: #999;
+  opacity: 0.8;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.sub-btn{
+  width: 45%;
+  height: 50px;
+  font-size: 22px !important;
+  margin: auto 10px;
+}
+.change-view{
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .change-view{
+    display: block;
+  }
+}

@@ -1,0 +1,35 @@
+<div class="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <%= link_to image_tag("logo.png" ,size:"120x52" ,class:"navbar-brand"), root_path %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li><%= link_to "TOP", root_path, class: "nav-link text-dark" %></li>
+          <li><%= link_to "ABOUT", "#about", class: "nav-link text-dark" %></li>
+          <li><%= link_to "HOW TO", "#howto", class: "nav-link text-dark" %></li>
+          <li><%= link_to "GYM LIST", "#gym-list", class: "nav-link text-dark" %></li>
+          <li><%= link_to "CONTACT", "#contact", class: "nav-link text-dark" %></li>
+        </ul>
+        <div class='navbar-right'>
+          <%# if user_signed_in? %>
+            <%#= link_to "MY PAGE", "#", class: "btn btn-outline-dark w-120px btn-size" %>
+            <%#= link_to "LOG OUT", "#", method: :delete, class: "btn btn-outline-dark w-120px btn-size" %>
+          <%# else %>
+            <div class="list-btn">
+              <%= link_to "PARTNERS", "#", class: "btn btn-outline-dark btn-size" %>
+            </div>
+            <div class="list-btn">
+              <%= link_to "LOG IN", "#", class: "btn btn-outline-dark btn-size" %>
+            </div>
+            <div class="list-btn">
+              <%= link_to "SIGN UP", "#", class: "btn btn-outline-dark  btn-size" %>
+            </div>
+          <%# end %>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
