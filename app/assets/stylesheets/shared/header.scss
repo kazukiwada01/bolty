@@ -1,15 +1,19 @@
 .navbar-nav{
   text-align: center;
 }
+.nav-link{
+  font-size: 19px;
+}
 .navbar-right{
   display: flex;
   margin: 0 0 0 auto;
 }
 .list-btn{
-  margin: 10px;
+  margin: 5px;
 }
-.w-120px {
-  width: 120px !important;
+.btn-size {
+  font-size: 19px !important;
+  width: 130px !important;
 }
 @media screen and (max-width: 992px) {
   .navbar-right{
