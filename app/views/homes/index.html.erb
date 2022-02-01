@@ -9,7 +9,7 @@
   <%# /トップ画像を表示 %>
 
   <%# aboutを表示 %>
-  <div class="about-contents">
+  <div class="about-contents" id="about">
     <h1>About</h1>
     <p class="about-text">
       Boltyとは、ボルダリングにおける能力を数値化しレーダーチャートで表示、管理するためのアプリです。
@@ -19,7 +19,7 @@
   <%# /aboutを表示 %>
 
   <%# how toを表示 %>
-  <div class="container">
+  <div class="container" id="howto">
     <h1>How To</h1>
     <div class="row">
       <div class="col-lg">
@@ -42,7 +42,7 @@
   <%= render "shared/gym-list" %> 
   <%# /gym listを表示 %>
 
-  <div class="contact">
+  <div class="contact" id="contact">
     <h1>Contact</h1>
     <div class="list-btn">
       <%= link_to "ジム経営者の方はこちら", "#", class: "btn btn-outline-dark btn-size2" %>
