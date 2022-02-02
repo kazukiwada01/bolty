@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>Bolty</title>
-    <link rel="apple-touch-icon" href="icon.png">
+    <link href="<%= image_path("icon.png") %>" rel="shortcut icon" type="image/x-icon" />
+    <link href="<%= image_path("icon.png") %>" rel="apple-touch-icon" sizes="180x180" type="image/png" />
+    <link href="<%= image_path("icon.png") %>" rel="icon" sizes="192x192" type="image/png" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
