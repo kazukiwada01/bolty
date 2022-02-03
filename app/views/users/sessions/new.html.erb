@@ -1,0 +1,26 @@
+<%= form_with model: @user, url: user_session_path, class: "form-main", local: true do |f| %>
+<div class="form-wrap">
+  <div class="form-top">
+    <div class="form-brand">
+      <%= link_to image_tag("logo.png" ,size:"150x50"), root_path %>
+    </div>
+    <h1 class="h3 mb-3 fw-normal">Log in</h1>
+  </div>
+  <%= render "shared/error_messages", model: f.object %>
+
+  <div class="form-text-wrap">
+    <%= f.email_field :email, class:"form-control", id:"email", placeholder:"Email address", autofocus: true %>
+  </div>
+  <div class="form-text-wrap">
+    <%= f.password_field :password, class:"form-control", id:"password", placeholder:"Password(6文字以上の半角英数字)" %>
+  </div>
+  <div class="form-btn">
+    <%= f.submit "Log in" ,class:"w-100 btn btn-lg btn-secondary" %>
+  </div>
+
+  <%= link_to "Sign up", new_user_registration_path, class: "w-100 btn btn-lg btn-outline-dark users-links2" %>
+  <%= link_to "Forgot your password?", new_user_password_path, class: "w-100 btn btn-lg btn-outline-dark users-links" %>
+
+  <div class="text-dark copyright">© 2022 Bolty</div>
+</div>
+<% end %>
