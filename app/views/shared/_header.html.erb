@@ -19,7 +19,7 @@
               <%= link_to "MY PAGE", "#", class: "btn btn-outline-dark btn-size" %>
             </div>
             <div class="list-btn">
-              <%= link_to "LOG OUT", "#", method: :delete, class: "btn btn-outline-dark btn-size" %>
+              <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-size" %>
             </div>
           <% else %>
             <div class="list-btn">
