@@ -1,0 +1,17 @@
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 1.5vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
+
+@media screen and (max-width: 992px) {
+  .error-message {
+    font-size: 2vw;
+  }
+}

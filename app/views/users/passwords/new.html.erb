@@ -1,0 +1,25 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<div class="form-main">
+  <div class="form-wrap">
+    <div class="form-top">
+      <div class="form-brand">
+        <%= link_to image_tag("logo.png" ,size:"150x50"), root_path %>
+      </div>
+      <h1 class="h3 mb-3 fw-normal">Forgot your password?</h1>
+    </div>
+    <%= render "shared/error_messages", model: f.object %>
+
+    <div class="form-text-wrap">
+      <%= f.email_field :email, class:"form-control", id:"email", placeholder:"Email address", autofocus: true %>
+    </div>
+    <div class="form-btn">
+      <%= f.submit "Send me reset password instructions" ,class:"w-100 btn btn-lg btn-secondary" %>
+    </div>
+
+    <%= link_to "Log in", user_session_path, class: "w-100 btn btn-lg btn-outline-dark users-links2" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "w-100 btn btn-lg btn-outline-dark users-links" %>
+
+    <div class="text-dark copyright">© 2022 Bolty</div>
+  </div>
+</div>
+<% end %>
