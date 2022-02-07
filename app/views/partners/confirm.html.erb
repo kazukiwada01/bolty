@@ -1,0 +1,43 @@
+<div class="form-wrap">
+  <div class="form-top">
+    <div class="form-brand">
+      <%= link_to image_tag("logo.png" ,size:"150x50"), root_path %>
+    </div>
+    <h1>パートナー登録申込</h1>
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item">1.入力</li>
+      <li class="nav-item current-item">2.確認</li>
+      <li class="nav-item">3.完了</li>
+    </ul>
+  </div>
+
+  <ul class="confirm">
+    <li class="confirm-item">会社名: <%= @partner.company %></li>
+    <li class="confirm-item">メールアドレス: <%= @partner.email %></li>
+    <li class="confirm-item">お名前: <%= @partner.last_name %> <%= @partner.first_name %></li>
+    <li class="confirm-item">お名前カナ: <%= @partner.last_name_kana %> <%= @partner.first_name_kana %></li>
+    <li class="confirm-item">電話番号: <%= @partner.phone_number %></li>
+    <li class="confirm-item">ご質問・ご要望: <%= @partner.message %></li>
+  </ul>
+  <div class="contact">
+    <%= form_for @partner, method: :post, url: partners_done_path do |f| %>
+      <%= f.hidden_field :company %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :last_name %><%= f.hidden_field :first_name %>
+      <%= f.hidden_field :last_name_kana %><%= f.hidden_field :first_name_kana %>
+      <%= f.hidden_field :phone_number %>
+      <%= f.hidden_field :message %>
+      <%= f.submit "送信する", class:"btn btn-secondary submit-btn" %>
+    <% end %>
+    <%= form_for @partner, method: :post, url: partners_back_path do |f| %>
+      <%= f.hidden_field :company %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :last_name %><%= f.hidden_field :first_name %>
+      <%= f.hidden_field :last_name_kana %><%= f.hidden_field :first_name_kana %>
+      <%= f.hidden_field :phone_number %>
+      <%= f.hidden_field :message %>
+      <%= f.submit "入力画面に戻る" , class:"btn btn-secondary submit-btn" %></div>
+    <% end %>
+  </div>
+  <div class="text-dark copyright">© 2022 Bolty</div>
+</div>

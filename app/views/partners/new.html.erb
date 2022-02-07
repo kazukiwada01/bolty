@@ -1,0 +1,46 @@
+<div class="form-wrap">
+  <div class="form-top">
+    <div class="form-brand">
+      <%= link_to image_tag("logo.png" ,size:"150x50"), root_path %>
+    </div>
+    <h1>パートナー登録申込</h1>
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item current-item">1.入力</li>
+      <li class="nav-item">2.確認</li>
+      <li class="nav-item">3.完了</li>
+    </ul>
+  </div>
+  <%= form_for @partner,method: :post, url: partners_confirm_path do |f| %>
+    <%= render "shared/error_messages", model: f.object %>
+    <div class="contact">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">会社名</label>
+        <%= f.text_field :company, class:"form-control", id:"company" ,placeholder:"会社名またはジム名" %>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">メールアドレス</label>
+        <%= f.text_field :email, class:"form-control", id:"email" ,placeholder:"name@example.com" %>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">お名前(全角)</label>
+        <%= f.text_field :last_name, class:"form-control", id:"last-name", placeholder:"例) 山田" %>
+        <%= f.text_field :first_name, class:"form-control", id:"first-name", placeholder:"例) 太郎" %>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">お名前カナ(全角)</label>
+        <%= f.text_field :last_name_kana, class:"form-control", id:"last-name_kana", placeholder:"例) ヤマダ" %>
+        <%= f.text_field :first_name_kana, class:"form-control", id:"first-name_kana", placeholder:"例) タロウ" %>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">電話番号</label>
+        <%= f.text_field :phone_number, class:"form-control", id:"phone_number" ,placeholder:"例）09012345678" %>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">ご質問・ご要望</label>
+        <%= f.text_area :message, class:"form-control", id:"message" %>
+      </div>
+      <%= f.submit "確認画面に進む" ,class:"btn btn-secondary submit-btn btn-margin" %>
+    </div>
+  <% end %>
+  <div class="text-dark copyright">© 2022 Bolty</div>
+</div>

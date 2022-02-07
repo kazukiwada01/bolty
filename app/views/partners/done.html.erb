@@ -1,0 +1,21 @@
+<div class="form-wrap">
+  <div class="form-top">
+    <div class="form-brand">
+      <%= link_to image_tag("logo.png" ,size:"150x50"), root_path %>
+    </div>
+    <h1>パートナー登録申込</h1>
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item">1.入力</li>
+      <li class="nav-item">2.確認</li>
+      <li class="nav-item current-item">3.完了</li>
+    </ul>
+  </div>
+  <div class="done-text">
+    送信が完了しました。<br>
+    確認作業の後、アカウントの作成完了メールを送信致します。
+  </div>
+  <div class="done-btn">
+    <%= link_to "トップページへ戻る",  root_path, class: "btn btn-secondary submit-btn" %>
+  </div>
+  <div class="text-dark copyright">© 2022 Bolty</div>
+</div>
