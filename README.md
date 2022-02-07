@@ -96,3 +96,16 @@
 
 - belongs_to :user
 - belongs_to :problem_list
+
+## partners テーブル
+
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| company            | string     | null: false                    |
+| email              | string     | null: false                    |
+| first_name         | string     | null: false                    |
+| last_name          | string     | null: false                    |
+| first_name_kana    | string     | null: false                    |
+| last_name_kana     | string     | null: false                    |
+| phone_number       | string     | null: false                    |
+| message            | text       | null: false                    |
