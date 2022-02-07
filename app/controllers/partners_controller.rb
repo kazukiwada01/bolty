@@ -10,9 +10,7 @@ class PartnersController < ApplicationController
 
   def confirm
     @partner = Partner.new(partner_params)
-    if @partner.invalid?
-      render :new
-    end
+    render :new if @partner.invalid?
   end
 
   def done
@@ -24,7 +22,7 @@ class PartnersController < ApplicationController
   private
 
   def partner_params
-    params.require(:partner).permit(:company, :email, :first_name, :last_name, 
-      :first_name_kana, :last_name_kana, :phone_number, :message)
+    params.require(:partner).permit(:company, :email, :first_name, :last_name,
+                                    :first_name_kana, :last_name_kana, :phone_number, :message)
   end
 end
