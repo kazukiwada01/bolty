@@ -9,9 +9,18 @@
   list-style: circle;
   color: rgb(182, 48, 0);
 }
+.login-flash-message {
+  text-align: center;
+  font-size: 1.5vw;
+  margin-bottom: 20px;
+  color: rgb(182, 48, 0);
+}
 
 @media screen and (max-width: 992px) {
   .error-message {
+    font-size: 2vw;
+  }
+  .login-flash-message{
     font-size: 2vw;
   }
 }

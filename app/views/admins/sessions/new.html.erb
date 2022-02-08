@@ -1,4 +1,4 @@
-<%= form_with model: @user, url: user_session_path, class: "form-main", local: true do |f| %>
+<%= form_with model: @admin, url: admin_session_path, class: "form-main", local: true do |f| %>
 <div class="form-wrap">
   <div class="form-top">
     <div class="form-brand">
@@ -21,8 +21,7 @@
     <%= f.submit "Log in" ,class:"w-100 btn btn-lg btn-secondary" %>
   </div>
 
-  <%= link_to "Sign up", new_user_registration_path, class: "w-100 btn btn-lg btn-outline-dark users-links2" %>
-  <%= link_to "Forgot your password?", new_user_password_path, class: "w-100 btn btn-lg btn-outline-dark users-links" %>
+  <%= link_to "Forgot your password?", new_admin_password_path, class: "w-100 btn btn-lg btn-outline-dark users-links" %>
 
   <div class="text-dark copyright">© 2022 Bolty</div>
 </div>
