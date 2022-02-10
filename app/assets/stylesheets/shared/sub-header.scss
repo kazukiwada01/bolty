@@ -1,0 +1,29 @@
+.sub-header{
+  display: flex;
+  height: 68px;
+  background-color: #eeeeee;
+  padding: auto 0px;
+  justify-content: space-between;
+}
+.header-logo{
+  margin: auto 15px;
+}
+.header-right{
+  display: flex;
+  margin: 8px 10px 0 0;
+}
+.btn-size2{
+  font-size: 19px !important;
+  width: 180px !important;
+}
+.btn-size3{
+  font-size: 19px !important;
+  width: 220px !important;
+}
+@media screen and (max-width: 992px) {
+  .btn-size2{
+    font-size: 24px !important;
+    width: 200px !important;
+    height: 50px !important;
+  }
+}
