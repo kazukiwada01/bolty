@@ -2,6 +2,7 @@ class Admin < ApplicationRecord
   validates :company, presence: true
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
+  validates :password, presence: true
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width characters' } do
     validates :first_name
     validates :last_name
