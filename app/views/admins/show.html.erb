@@ -1,0 +1,29 @@
+<%= render "shared/sub-header" %>
+<div class="main">
+  <div class="info-title">
+    <h1 class="h3 mb-3 fw-normal">登録情報</h1>
+  </div>
+  <div class="info-list">
+    <div class="info-text">会社名・ジム名</div>
+    <div class="info"><%= @admin.company %></div>
+  </div>
+  <div class="info-list">
+    <div class="info-text">名前</div>
+    <div class="info"><%= @admin.last_name %> <%= @admin.first_name %></div>
+  </div>
+  <div class="info-list">
+    <div class="info-text">メールアドレス(ログインID)</div>
+    <div class="info"><%= @admin.email %></div>
+  </div>
+  <div class="info-list">
+    <div class="info-text">電話番号</div>
+    <div class="info"><%= @admin.phone_number %></div>
+  </div>
+  <div class="info-btn">
+    <%= link_to "パスワードの修正", admin_password_path, class: "btn btn-outline-dark btn-size5" %>
+  </div>
+  <div class="info-title">
+    <h1 class="h3 mb-3 fw-normal">ジム情報</h1>
+  </div>
+</div>
+<%= render "shared/footer" %>

@@ -1,0 +1,32 @@
+.info-title{
+  text-align: center;
+  margin-top: 60px;
+}
+.info-list{
+  display: flex;
+  justify-content: center;
+}
+.info-text{
+  height: 60px;
+  width: 300px;
+  font-size: 20px;
+  padding: 15px 0 0 20px;
+  border: 0.5px solid lightgrey;
+  background-color: #eeeeee;
+  margin: 0 0;
+}
+.info{
+  height: 60px;
+  width: 600px;
+  font-size: 20px;
+  padding: 15px 0 0 20px;
+  border: 0.5px solid lightgrey;
+}
+.info-btn{
+  text-align: center;
+  margin-top: 20px;
+}
+.btn-size5{
+  font-size: 20px !important;
+  width: 900px !important;
+}

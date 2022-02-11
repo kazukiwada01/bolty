@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post "partners/confirm"
   post "partners/back"
   post "partners/done"
+  resources :admins, only: :show
 end
