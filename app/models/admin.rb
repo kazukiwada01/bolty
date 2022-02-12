@@ -1,4 +1,6 @@
 class Admin < ApplicationRecord
+  has_many :gyms
+
   validates :company, presence: true
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
