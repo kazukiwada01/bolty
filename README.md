@@ -40,7 +40,7 @@
 | city_name          | string     | null: false                    |
 | street             | string     | null: false                    |
 | building_name      | string     |                                |
-| gym_url            | text       |                                |
+| gym_url            | text       | null: false                    |
 | admin              | references | null: false, foreign_key: true |
 
 ### Association
