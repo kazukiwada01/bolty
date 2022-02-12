@@ -3,7 +3,7 @@ class Gym < ApplicationRecord
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
+  belongs_to :prefecture
 
   with_options presence: true do
     validates :image

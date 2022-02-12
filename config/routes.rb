@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   post "partners/back"
   post "partners/done"
   resources :admins, only: [:show, :edit, :update]
+  resources :gyms, only: [:new, :create]
 end
