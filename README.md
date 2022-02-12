@@ -36,7 +36,7 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
-| prefectures_id     | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | city_name          | string     | null: false                    |
 | street             | string     | null: false                    |
 | building_name      | string     |                                |
