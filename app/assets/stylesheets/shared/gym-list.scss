@@ -1,11 +1,11 @@
 /* gym list表示 */
 .gym-list{
   background-image: image-url("back-img1.png");
-  height: 1000px;
+  height: 1030px;
   width: 100%;
   text-align: center;
   padding: 50px 0;
-  margin-top: 50px;
+  margin: 50px 0;
 }
 .prefectures{
   padding: 20px 0;
@@ -33,7 +33,7 @@
   padding-left: 0px !important;
 }
 .gym-search{
-  margin-top: 100px;
+  margin: 10px 0 80px 0;
 }
 .d-flex{
   width: 80%;

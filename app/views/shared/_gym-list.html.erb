@@ -1,4 +1,11 @@
 <div class="gym-list" id="gym-list">
+  <div class="gym-search">
+      <h1>Gym Search</h1>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="キーワードから検索する" aria-label="Search">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </form>
+    </div>
   <h1>Gym List</h1>
   <div class="prefectures">
     <div class="dropdown">
@@ -128,12 +135,5 @@
         <li><%= link_to "沖縄県", "#", class: "dropdown-item" %></li>
       </ul>
     </div>
-    <div class="gym-search">
-      <h1>Gym Search</h1>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="キーワードから検索する" aria-label="Search">
-          <button class="btn btn-secondary" type="submit">Search</button>
-        </form>
-      </div>
   </div>
 </div>

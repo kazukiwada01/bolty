@@ -12,9 +12,11 @@
           <%= link_to "ADMIN PAGE", admin_path(current_admin), class: "btn btn-outline-dark btn-size2" %>
         </div>
       <% end %>
-      <div class="list-btn">
-        <%= link_to "ADD NEW GYM", new_gym_path, class: "btn btn-outline-dark btn-size2" %>
-      </div>
+      <% unless request.path.include?("gyms") %>
+        <div class="list-btn">
+          <%= link_to "ADD NEW GYM", new_gym_path, class: "btn btn-outline-dark btn-size2" %>
+        </div>
+      <% end %>
     <% else %>
       <div class="list-btn">
         <%= link_to "PARTNERS LOG IN", admin_session_path, class: "btn btn-outline-dark btn-size3" %>

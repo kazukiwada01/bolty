@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
 
   def show
     @admin = Admin.find(params[:id])
+    @gyms = Gym.all
   end
 
   def edit

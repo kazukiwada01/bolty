@@ -24,9 +24,29 @@
 }
 .info-btn{
   text-align: center;
-  margin-top: 20px;
+  margin: 20px 0 80px 0;
 }
 .btn-size5{
   font-size: 20px !important;
   width: 900px !important;
+}
+.gym-text{
+  margin-bottom: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+.info-gym{
+  margin: 0 auto;
+  text-align: center;
+  width: 900px;
+  height: 450px;
+  border: 0.5px solid lightgrey;
+}
+.gym-img{
+  height: 430px;
+  margin: 10px 0;
+}
+.btn-size7{
+  font-size: 20px !important;
+  width: 298px !important;
 }
