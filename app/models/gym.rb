@@ -15,4 +15,5 @@ class Gym < ApplicationRecord
     validates :street
     validates :gym_url
   end
+  validates :gym_url, format: /\A#{URI::regexp(%w(http https))}\z/
 end
