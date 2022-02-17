@@ -34,7 +34,8 @@ class GymsController < ApplicationController
   private
 
   def gym_params
-    params.require(:gym).permit(:image, :name, :prefecture_id, :city_name, :street, :building_name, :gym_url).merge(admin_id: current_admin.id)
+    params.require(:gym).permit(:image, :name, :prefecture_id, :city_name, :street, :building_name,
+                                :gym_url).merge(admin_id: current_admin.id)
   end
 
   def set_gym
