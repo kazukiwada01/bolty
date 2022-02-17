@@ -1,0 +1,195 @@
+<div class="pick-gyms">
+    <div class="pick-title">
+      <h1>Pick up Gyms</h1>
+    </div>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+
+      <div class="carousel-inner pick-gym">
+        <% if @gym1 == nil %>
+          <div class="carousel-item active">
+          <%= image_tag("back-img2.jpg", class:"d-block pick-img") %>
+            <div class="pick-text">
+              クライミングジム○○1
+            </div>
+            <div class="pick-text">
+              大阪府大阪市中央区本町1-1-1
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% else %>
+          <div class="carousel-item active">
+            <%= image_tag @gym1.image, class:"d-block pick-img" %>
+            <div class="pick-text">
+              <%= @gym1.name %>
+            </div>
+            <div class="pick-text">
+              <%= @gym1.prefecture.name %><%= @gym1.city_name %><%= @gym1.street %><%= @gym1.building_name %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", @gym1.gym_url, class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @gym2 == nil %>
+          <div class="carousel-item">
+          <%= image_tag("back-img2.jpg", class:"d-block pick-img") %>
+            <div class="pick-text">
+              クライミングジム○○2
+            </div>
+            <div class="pick-text">
+              大阪府大阪市中央区本町2-2-2
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= image_tag @gym2.image, class:"d-block pick-img" %>
+            <div class="pick-text">
+              <%= @gym2.name %>
+            </div>
+            <div class="pick-text">
+              <%= @gym2.prefecture.name %><%= @gym2.city_name %><%= @gym2.street %><%= @gym2.building_name %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", @gym2.gym_url, class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @gym3 == nil %>
+          <div class="carousel-item">
+          <%= image_tag("back-img2.jpg", class:"d-block pick-img") %>
+            <div class="pick-text">
+              クライミングジム○○3
+            </div>
+            <div class="pick-text">
+              大阪府大阪市中央区本町3-3-3
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= image_tag @gym3.image, class:"d-block pick-img" %>
+            <div class="pick-text">
+              <%= @gym3.name %>
+            </div>
+            <div class="pick-text">
+              <%= @gym3.prefecture.name %><%= @gym3.city_name %><%= @gym3.street %><%= @gym3.building_name %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", @gym3.gym_url, class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @gym4 == nil %>
+          <div class="carousel-item">
+          <%= image_tag("back-img2.jpg", class:"d-block pick-img") %>
+            <div class="pick-text">
+              クライミングジム○○4
+            </div>
+            <div class="pick-text">
+              大阪府大阪市中央区本町4-4-4
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= image_tag @gym4.image, class:"d-block pick-img" %>
+            <div class="pick-text">
+              <%= @gym4.name %>
+            </div>
+            <div class="pick-text">
+              <%= @gym4.prefecture.name %><%= @gym4.city_name %><%= @gym4.street %><%= @gym4.building_name %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", @gym4.gym_url, class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% end %>
+
+        <% if @gym5 == nil %>
+          <div class="carousel-item">
+          <%= image_tag("back-img2.jpg", class:"d-block pick-img") %>
+            <div class="pick-text">
+              クライミングジム○○5
+            </div>
+            <div class="pick-text">
+              大阪府大阪市中央区本町5-5-5
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= image_tag @gym5.image, class:"d-block pick-img" %>
+            <div class="pick-text">
+              <%= @gym5.name %>
+            </div>
+            <div class="pick-text">
+              <%= @gym5.prefecture.name %><%= @gym5.city_name %><%= @gym5.street %><%= @gym5.building_name %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+            </div>
+            <div class="pick-btn">
+              <%= link_to "ジムページへ移動", @gym5.gym_url, class: "btn btn-outline-dark btn-size8" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
