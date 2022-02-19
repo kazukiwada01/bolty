@@ -53,7 +53,6 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
-| month_numbers      | date       | null: false                    |
 | admin              | references | null: false, foreign_key: true |
 | gym                | references | null: false, foreign_key: true |
 
