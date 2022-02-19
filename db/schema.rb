@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_12_090045) do
+ActiveRecord::Schema.define(version: 2022_02_19_050851) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(version: 2022_02_12_090045) do
     t.text "message", null: false
   end
 
+  create_table "problem_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "admin_id", null: false
+    t.bigint "gym_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_problem_lists_on_admin_id"
+    t.index ["gym_id"], name: "index_problem_lists_on_gym_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -88,4 +98,6 @@ ActiveRecord::Schema.define(version: 2022_02_12_090045) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "gyms", "admins"
+  add_foreign_key "problem_lists", "admins"
+  add_foreign_key "problem_lists", "gyms"
 end
