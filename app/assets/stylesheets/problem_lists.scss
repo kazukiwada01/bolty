@@ -1,0 +1,29 @@
+.problem-text{
+  text-align: center;
+}
+.problem-list-btn{
+  text-align: center;
+  margin: 20px 0 50px 0;
+}
+.problem-lists{
+  margin-bottom: 100px;
+}
+.problem-list{
+  display: flex;
+  margin: 30px auto;
+  padding: auto 0;
+  width: 900px;
+  border-bottom: solid 1px black ;
+}
+.problem{
+  height: 50px;
+  width: 480px;
+  font-size: 20px;
+  padding: 10px 0 0 10px;
+}
+.btn-size9{
+  font-size: 20px !important;
+  width: 200px !important;
+  height: 45px !important;
+  margin-left: 10px;
+}

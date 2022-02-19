@@ -1,0 +1,32 @@
+<%= render "shared/sub-header" %>
+
+<div class="gyms">
+  <div class="info-title">
+    <h1 class="h3 mb-3 fw-normal"><%= @gym.name %></h1>
+  </div>
+  <div class="info-gym">
+    <%= image_tag @gym.image, class:"gym-img" %></div>
+  </div>
+</div>
+
+<div class="info-title">
+  <h1 class="h3 mb-3 fw-normal">課題帳</h1>
+</div>
+<div class="problem-text">※課題帳は作成から3カ月後自動で削除されます。</div>
+<div class="problem-list-btn">
+  <%= link_to "課題帳を作成", new_gym_problem_list_path, class: "btn btn-outline-dark btn-size5" %>
+</div>
+<div class="problem-lists">
+  <% if @problem_lists[0] == nil %>
+    <div class="gym-text">課題帳が登録されていません。</div>
+  <% end %>
+  <% @problem_lists.each do |problem_list| %>
+    <div class="problem-list">
+      <div class="problem"><%= problem_list.name %></div>
+      <%= link_to "名前を変更する", "#", class: "btn btn-outline-dark btn-size9" %>
+      <%= link_to "課題を作成する", "#", class: "btn btn-outline-dark btn-size9" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
