@@ -1,4 +1,8 @@
-<%= render "shared/sub-header" %>
+<% if admin_signed_in? %>
+  <%= render "shared/sub-header" %>
+<% else %>
+  <%= render "shared/sub-header2" %>
+<% end %>
 
 <div class="gyms">
   <div class="info-title">
@@ -12,10 +16,12 @@
 <div class="info-title">
   <h1 class="h3 mb-3 fw-normal">課題帳</h1>
 </div>
-<div class="problem-text">※課題帳は作成から3カ月後自動で削除されます。</div>
-<div class="problem-list-btn">
-  <%= link_to "課題帳を作成", new_gym_problem_list_path, class: "btn btn-outline-dark btn-size5" %>
-</div>
+<% if @gym.admin == current_admin %>
+  <div class="problem-text">※課題帳は作成から3カ月後自動で削除されます。</div>
+  <div class="problem-list-btn">
+    <%= link_to "課題帳を作成", new_gym_problem_list_path, class: "btn btn-outline-dark btn-size5" %>
+  </div>
+<% end %>
 <div class="problem-lists">
   <% if @problem_lists[0] == nil %>
     <div class="gym-text">課題帳が登録されていません。</div>
@@ -23,10 +29,13 @@
   <% @problem_lists.each do |problem_list| %>
     <div class="problem-list">
       <div class="problem"><%= problem_list.name %></div>
-      <%= link_to "名前を変更する", edit_gym_problem_list_path(@gym, problem_list.id), class: "btn btn-outline-dark btn-size9" %>
-      <%= link_to "課題を作成する", "#", class: "btn btn-outline-dark btn-size9" %>
+      <% if @gym.admin == current_admin %>
+        <%= link_to "名前を変更する", edit_gym_problem_list_path(@gym, problem_list.id), class: "btn btn-outline-dark btn-size9" %>
+        <%= link_to "課題を作成する", "#", class: "btn btn-outline-dark btn-size9" %>
+      <% else %>
+        <%= link_to "挑戦する", "#", class: "btn btn-outline-dark btn-size10" %>
+      <% end %>
     </div>
   <% end %>
 </div>
-
 <%= render "shared/footer" %>

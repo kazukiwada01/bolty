@@ -38,7 +38,7 @@
               <%= @gym1.prefecture.name %><%= @gym1.city_name %><%= @gym1.street %><%= @gym1.building_name %>
             </div>
             <div class="pick-btn">
-              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+              <%= link_to "課題に挑戦する", gym_problem_lists_path(@gym1.id), class: "btn btn-outline-dark btn-size8" %>
             </div>
             <div class="pick-btn">
               <%= link_to "ジムページへ移動", @gym1.gym_url, class: "btn btn-outline-dark btn-size8" %>
@@ -72,7 +72,7 @@
               <%= @gym2.prefecture.name %><%= @gym2.city_name %><%= @gym2.street %><%= @gym2.building_name %>
             </div>
             <div class="pick-btn">
-              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+              <%= link_to "課題に挑戦する", gym_problem_lists_path(@gym2.id), class: "btn btn-outline-dark btn-size8" %>
             </div>
             <div class="pick-btn">
               <%= link_to "ジムページへ移動", @gym2.gym_url, class: "btn btn-outline-dark btn-size8" %>
@@ -106,7 +106,7 @@
               <%= @gym3.prefecture.name %><%= @gym3.city_name %><%= @gym3.street %><%= @gym3.building_name %>
             </div>
             <div class="pick-btn">
-              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+              <%= link_to "課題に挑戦する", gym_problem_lists_path(@gym3.id), class: "btn btn-outline-dark btn-size8" %>
             </div>
             <div class="pick-btn">
               <%= link_to "ジムページへ移動", @gym3.gym_url, class: "btn btn-outline-dark btn-size8" %>
@@ -140,7 +140,7 @@
               <%= @gym4.prefecture.name %><%= @gym4.city_name %><%= @gym4.street %><%= @gym4.building_name %>
             </div>
             <div class="pick-btn">
-              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+              <%= link_to "課題に挑戦する", gym_problem_lists_path(@gym4.id), class: "btn btn-outline-dark btn-size8" %>
             </div>
             <div class="pick-btn">
               <%= link_to "ジムページへ移動", @gym4.gym_url, class: "btn btn-outline-dark btn-size8" %>
@@ -174,7 +174,7 @@
               <%= @gym5.prefecture.name %><%= @gym5.city_name %><%= @gym5.street %><%= @gym5.building_name %>
             </div>
             <div class="pick-btn">
-              <%= link_to "課題に挑戦する", "#", class: "btn btn-outline-dark btn-size8" %>
+              <%= link_to "課題に挑戦する", gym_problem_lists_path(@gym5.id), class: "btn btn-outline-dark btn-size8" %>
             </div>
             <div class="pick-btn">
               <%= link_to "ジムページへ移動", @gym5.gym_url, class: "btn btn-outline-dark btn-size8" %>

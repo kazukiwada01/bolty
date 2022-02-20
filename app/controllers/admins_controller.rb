@@ -1,9 +1,10 @@
 class AdminsController < ApplicationController
   before_action :authenticate_admin!, only: [:show, :edit]
+  before_action :set_admin, only: [:show, :edit]
+  before_action :admin_check, only: [:show, :edit]
 
   def show
-    @admin = Admin.find(params[:id])
-    @gyms = Gym.all
+    @gyms = @admin.gyms.includes(:admin)
   end
 
   def edit
@@ -21,5 +22,15 @@ class AdminsController < ApplicationController
 
   def admin_params
     params.require(:admin).permit(:password, :password_confirmation, :current_password)
+  end
+
+  def set_admin
+    @admin = Admin.find(params[:id])
+  end
+
+  def admin_check
+    unless @admin == current_admin
+      redirect_to admin_path(current_admin)
+    end
   end
 end
