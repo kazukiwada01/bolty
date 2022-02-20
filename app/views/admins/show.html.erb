@@ -50,7 +50,7 @@
     </div>
     <div class="info-btn">
       <%= link_to "編集する", edit_gym_path(gym.id), class: "btn btn-outline-dark btn-size7" %>
-      <%= link_to "課題帳作成ページ", "#", class: "btn btn-outline-dark btn-size7" %>
+      <%= link_to "課題帳作成ページ", gym_problem_lists_path(gym.id), class: "btn btn-outline-dark btn-size7" %>
       <%= link_to "削除する", gym_path(gym.id), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-dark btn-size7" %>
     </div>
   <% end %>

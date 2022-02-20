@@ -1,5 +1,6 @@
 class Admin < ApplicationRecord
   has_many :gyms
+  has_many :problem_lists
 
   validates :company, presence: true
   devise :database_authenticatable,

@@ -1,6 +1,7 @@
 class GymsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :edit, :destroy]
   before_action :set_gym, only: [:edit, :update, :destroy]
+  before_action :gym_check, only: [:edit, :update, :destroy]
 
   def new
     @gym = Gym.new
@@ -40,5 +41,11 @@ class GymsController < ApplicationController
 
   def set_gym
     @gym = Gym.find(params[:id])
+  end
+
+  def gym_check
+    unless @gym.admin == current_admin
+      redirect_to admin_path(current_admin)
+    end
   end
 end
