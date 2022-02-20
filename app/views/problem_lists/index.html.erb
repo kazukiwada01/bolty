@@ -23,7 +23,7 @@
   <% @problem_lists.each do |problem_list| %>
     <div class="problem-list">
       <div class="problem"><%= problem_list.name %></div>
-      <%= link_to "名前を変更する", "#", class: "btn btn-outline-dark btn-size9" %>
+      <%= link_to "名前を変更する", edit_gym_problem_list_path(@gym, problem_list.id), class: "btn btn-outline-dark btn-size9" %>
       <%= link_to "課題を作成する", "#", class: "btn btn-outline-dark btn-size9" %>
     </div>
   <% end %>

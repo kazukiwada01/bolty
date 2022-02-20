@@ -1,5 +1,7 @@
 class ProblemListsController < ApplicationController
-  before_action :set_gym, only: [:index, :create]
+  before_action :authenticate_admin!, only: [:new, :edit]
+  before_action :set_gym, only: [:index, :create, :edit, :update]
+  before_action :set_problem_list, only: [:edit, :update]
 
   def index
     @problem_lists = @gym.problem_lists.includes(:gym)
@@ -18,6 +20,17 @@ class ProblemListsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @problem_list.update(problem_list_params)
+      redirect_to gym_problem_lists_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def problem_list_params
@@ -27,5 +40,9 @@ class ProblemListsController < ApplicationController
 
   def set_gym
     @gym = Gym.find(params[:gym_id])
+  end
+
+  def set_problem_list
+    @problem_list = ProblemList.find(params[:id])
   end
 end
