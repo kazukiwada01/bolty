@@ -68,7 +68,7 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
-| grades_id          | integer    | null: false                    |
+| grade_id           | integer    | null: false                    |
 | holding            | integer    | null: false                    |
 | physical           | integer    | null: false                    |
 | move               | integer    | null: false                    |
