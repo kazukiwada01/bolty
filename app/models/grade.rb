@@ -9,4 +9,7 @@ class Grade < ActiveHash::Base
     { id: 7, name: '1級' },
     { id: 8, name: '初段' }
   ]
+
+  include ActiveHash::Associations
+  has_many :problems
 end
