@@ -14,6 +14,11 @@
   padding: 20px;
   border-right: 1px solid;
 }
+.edit-problem{
+  width: 420px;
+  text-align: center;
+  margin: 50px auto;
+}
 .problem-margin{
   margin-top: 30px;
 }
@@ -66,12 +71,18 @@
 }
 .problem-box2{
   display: flex;
-  margin: 20px 0 10px 30px;
+  margin: 20px 35px 10px 30px;
+}
+.problem-img{
+  margin: 0 0 0 auto;
 }
 .problem4{
   font-size: 18px;
   text-align: initial;
   margin-right: 5px;
+}
+.margin-left{
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 992px) {
