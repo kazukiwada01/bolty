@@ -27,6 +27,7 @@
         <%= f.text_area :gym_url, class:"form-control form-padding", id:"gym_url", placeholder:"例) https://bouldering-ability.com" %>
       </div>
       <%= f.submit "変更する" ,class:"btn btn-secondary submit-btn btn-margin" %>
+      <%= link_to "戻る", admin_path(@gym.admin), class: "btn btn-outline-dark submit-btn2" %>
     </div>
   <% end %>
 </div>

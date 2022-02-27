@@ -350,8 +350,9 @@
     </div>
     <%# /coordination %>
 
-    <%= f.submit "登録する" ,class:"btn btn-secondary submit-btn btn-margin2" %>
+    <%= f.submit "変更する" ,class:"btn btn-secondary submit-btn btn-margin2" %>
   <% end %>
+  <%= link_to "戻る", gym_problem_list_problems_path, class: "btn btn-outline-dark submit-btn2" %>
 </div>
 
 <%= render "shared/footer" %>
