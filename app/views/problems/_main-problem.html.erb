@@ -1,0 +1,142 @@
+<div class="main-problem">
+  <h1 class="h3 mb-3 fw-normal">課題一覧</h1>
+  <% @problem_list.problems.each do |problem| %>
+    <div class="problem-box2">
+      <div class="problem4"><%= problem.name %></div>
+      <div class="problem4">( <%= problem.grade.name %> )</div>
+    </div>
+    <div class="problem-box">
+      <div class="problem2">保持力</div>
+      <div class="problem2">ﾌｨｼﾞｶﾙ</div>
+      <div class="problem2">ﾑｰﾌﾞ</div>
+      <div class="problem2 ">
+        <div class="transform">ﾎﾟｼﾞｼｮﾆﾝｸﾞ</div>
+      </div>
+      <div class="problem2">ﾌｯﾄﾜｰｸ</div>
+      <div class="problem2">
+        <div class="transform">ｺｰﾃﾞｨﾈｰｼｮﾝ</div>
+      </div>
+    </div>
+    <div class="problem-box">
+      <%# holding %>
+      <% if problem.holding == 0 %>
+        <div class="problem3">0</div>
+      <% elsif problem.holding == 1 %>
+        <div class="problem3">6級</div>
+      <% elsif problem.holding == 2.5 %>
+        <div class="problem3">5級</div>
+      <% elsif problem.holding == 4 %>
+        <div class="problem3">4級</div>
+      <% elsif problem.holding == 5.5 %>
+        <div class="problem3">3級</div>
+      <% elsif problem.holding == 7 %>
+        <div class="problem3">2級</div>
+      <% elsif problem.holding == 8.5 %>
+        <div class="problem3">1級</div>
+      <% elsif problem.holding == 10 %>
+        <div class="problem3">初段</div>
+      <% end %>
+      <%# /holding %>
+
+      <%# physical %>
+      <% if problem.physical == 0 %>
+        <div class="problem3">0</div>
+      <% elsif problem.physical == 1 %>
+        <div class="problem3">6級</div>
+      <% elsif problem.physical == 2.5 %>
+        <div class="problem3">5級</div>
+      <% elsif problem.physical == 4 %>
+        <div class="problem3">4級</div>
+      <% elsif problem.physical == 5.5 %>
+        <div class="problem3">3級</div>
+      <% elsif problem.physical == 7 %>
+        <div class="problem3">2級</div>
+      <% elsif problem.physical == 8.5 %>
+        <div class="problem3">1級</div>
+      <% elsif problem.physical == 10 %>
+        <div class="problem3">初段</div>
+      <% end %>
+      <%# /physical %>
+
+      <%# move %>
+      <% if problem.move == 0 %>
+        <div class="problem3">0</div>
+      <% elsif problem.move == 1 %>
+        <div class="problem3">6級</div>
+      <% elsif problem.move == 2.5 %>
+        <div class="problem3">5級</div>
+      <% elsif problem.move == 4 %>
+        <div class="problem3">4級</div>
+      <% elsif problem.move == 5.5 %>
+        <div class="problem3">3級</div>
+      <% elsif problem.move == 7 %>
+        <div class="problem3">2級</div>
+      <% elsif problem.move == 8.5 %>
+        <div class="problem3">1級</div>
+      <% elsif problem.move == 10 %>
+        <div class="problem3">初段</div>
+      <% end %>
+      <%# /move %>
+
+      <%# positioning %>
+      <% if problem.positioning == 0 %>
+        <div class="problem3">0</div>
+      <% elsif problem.positioning == 1 %>
+        <div class="problem3">6級</div>
+      <% elsif problem.positioning == 2.5 %>
+        <div class="problem3">5級</div>
+      <% elsif problem.positioning == 4 %>
+        <div class="problem3">4級</div>
+      <% elsif problem.positioning == 5.5 %>
+        <div class="problem3">3級</div>
+      <% elsif problem.positioning == 7 %>
+        <div class="problem3">2級</div>
+      <% elsif problem.positioning == 8.5 %>
+        <div class="problem3">1級</div>
+      <% elsif problem.positioning == 10 %>
+        <div class="problem3">初段</div>
+      <% end %>
+      <%# /positioning %>
+
+      <%# footwork %>
+      <% if problem.footwork == 0 %>
+        <div class="problem3">0</div>
+      <% elsif problem.footwork == 1 %>
+        <div class="problem3">6級</div>
+      <% elsif problem.footwork == 2.5 %>
+        <div class="problem3">5級</div>
+      <% elsif problem.footwork == 4 %>
+        <div class="problem3">4級</div>
+      <% elsif problem.footwork == 5.5 %>
+        <div class="problem3">3級</div>
+      <% elsif problem.footwork == 7 %>
+        <div class="problem3">2級</div>
+      <% elsif problem.footwork == 8.5 %>
+        <div class="problem3">1級</div>
+      <% elsif problem.footwork == 10 %>
+        <div class="problem3">初段</div>
+      <% end %>
+      <%# /footwork %>
+
+      <%# coordination %>
+      <% if problem.coordination == 0 %>
+        <div class="problem3">0</div>
+      <% elsif problem.coordination == 1 %>
+        <div class="problem3">6級</div>
+      <% elsif problem.coordination == 2.5 %>
+        <div class="problem3">5級</div>
+      <% elsif problem.coordination == 4 %>
+        <div class="problem3">4級</div>
+      <% elsif problem.coordination == 5.5 %>
+        <div class="problem3">3級</div>
+      <% elsif problem.coordination == 7 %>
+        <div class="problem3">2級</div>
+      <% elsif problem.coordination == 8.5 %>
+        <div class="problem3">1級</div>
+      <% elsif problem.coordination == 10 %>
+        <div class="problem3">初段</div>
+      <% end %>
+      <%# /coordination %>
+    </div>
+  <% end %>
+</div>
