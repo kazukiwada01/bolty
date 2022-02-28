@@ -1,7 +1,7 @@
 class ProblemsController < ApplicationController
-  before_action :authenticate_admin!, only: [:create, :edit]
+  before_action :authenticate_admin!, only: [:create, :edit, :destroy]
   before_action :set_problem_list, only: [:index, :create]
-  before_action :set_problem, only: [:edit, :update]
+  before_action :set_problem, only: [:edit, :update, :destroy]
 
   def index
     @problems = @problem_list.problems.includes(:problem_list_id)
@@ -11,7 +11,7 @@ class ProblemsController < ApplicationController
   def create
     @problem = Problem.new(problem_params)
     if @problem.save
-      redirect_to gym_problem_list_problems_pathd
+      redirect_to gym_problem_list_problems_path
     end
   end
 
@@ -24,6 +24,11 @@ class ProblemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @problem.delete
+    redirect_to gym_problem_list_problems_path
   end
 
   private

@@ -6,7 +6,7 @@
       <div class="problem4">( <%= problem.grade.name %> )</div>
       <div class="problem-img">
         <%= link_to image_tag("edit.png" ,size:"26x26"), edit_gym_problem_list_problem_path(@problem_list.gym.id, @problem_list, problem) %>
-        <%= link_to image_tag("edit.png" ,size:"26x26", class:"margin-left"), root_path %>
+        <%= link_to image_tag("delete.png" ,size:"26x26", class:"margin-left"), gym_problem_list_problem_path(@problem_list.gym.id, @problem_list, problem), method: :delete, data: {confirm: "削除しますか？"} %>
       </div>
     </div>
     <div class="problem-box">
