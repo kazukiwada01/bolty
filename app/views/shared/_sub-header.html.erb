@@ -17,6 +17,11 @@
           <%= link_to "ADD NEW GYM", new_gym_path, class: "btn btn-outline-dark btn-size2" %>
         </div>
       <% end %>
+      <% if request.path.include?("problems") %>
+        <div class="list-btn">
+          <%= link_to "PROBLEM LIST", gym_problem_lists_path, class: "btn btn-outline-dark btn-size2" %>
+        </div>
+      <% end %>
     <% else %>
       <div class="list-btn">
         <%= link_to "PARTNERS LOG IN", admin_session_path, class: "btn btn-outline-dark btn-size3" %>

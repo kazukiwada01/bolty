@@ -1,0 +1,358 @@
+<%= render "shared/sub-header" %>
+
+<div class="edit-problem">
+  <h1 class="h3 mb-3 fw-normal">課題を編集する</h1>
+  <%= form_with model: @problem, url: gym_problem_list_problem_path, id: "problem-box", local: true do |f|%>
+    <%= render "shared/error_messages", model: f.object %>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">課題名</label>
+      <%= f.text_field :name, class:"form-control", id:"name" ,placeholder:"例) 1番、○壁赤色" %>
+    </div>
+
+    <div class="mb-3 problem-margin">
+      <label for="exampleFormControlInput1" class="form-label">グレード</label>
+      <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box2 form-margin2", id:"grade"}) %>
+    </div>
+
+    <%# holding %>
+    <div class="mb-3 problem-margin">
+      <label for="exampleFormControlInput1" class="form-label">保持力</label>
+      <div class="radio-box">
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">0</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 0, :checked => (true if @problem.holding == 0) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">6級</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 1, :checked => (true if @problem.holding == 1) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">5級</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 2.5, :checked => (true if @problem.holding == 2.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">4級</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 4, :checked => (true if @problem.holding == 4) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">3級</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 5.5, :checked => (true if @problem.holding == 5.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">2級</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 7, :checked => (true if @problem.holding == 7) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">1級</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 8.5, :checked => (true if @problem.holding == 8.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">初段</label>
+          <div class="radio-button">
+            <%= f.radio_button :holding, 10, :checked => (true if @problem.holding == 10) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /holding %>
+
+    <%# physical %>
+    <div class="mb-3 problem-margin">
+      <label for="exampleFormControlInput1" class="form-label">フィジカル</label>
+      <div class="radio-box">
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">0</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 0, :checked => (true if @problem.physical == 0) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">6級</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 1, :checked => (true if @problem.physical == 1) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">5級</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 2.5, :checked => (true if @problem.physical == 2.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">4級</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 4, :checked => (true if @problem.physical == 4) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">3級</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 5.5, :checked => (true if @problem.physical == 5.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">2級</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 7, :checked => (true if @problem.physical == 7) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">1級</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 8.5, :checked => (true if @problem.physical == 8.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">初段</label>
+          <div class="radio-button">
+            <%= f.radio_button :physical, 10, :checked => (true if @problem.physical == 10) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /physical %>
+
+    <%# move %>
+    <div class="mb-3 problem-margin">
+      <label for="exampleFormControlInput1" class="form-label">ムーブ</label>
+      <div class="radio-box">
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">0</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 0, :checked => (true if @problem.move == 0) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">6級</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 1, :checked => (true if @problem.move == 1) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">5級</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 2.5, :checked => (true if @problem.move == 2.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">4級</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 4, :checked => (true if @problem.move == 4) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">3級</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 5.5, :checked => (true if @problem.move == 5.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">2級</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 7, :checked => (true if @problem.move == 7) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">1級</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 8.5, :checked => (true if @problem.move == 8.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">初段</label>
+          <div class="radio-button">
+            <%= f.radio_button :move, 10, :checked => (true if @problem.move == 10) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /move %>
+
+    <%# positioning %>
+    <div class="mb-3 problem-margin">
+      <label for="exampleFormControlInput1" class="form-label">ポジショニング</label>
+      <div class="radio-box">
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">0</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 0, :checked => (true if @problem.positioning == 0) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">6級</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 1, :checked => (true if @problem.positioning == 1) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">5級</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 2.5, :checked => (true if @problem.positioning == 2.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">4級</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 4, :checked => (true if @problem.positioning == 4) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">3級</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 5.5, :checked => (true if @problem.positioning == 5.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">2級</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 7, :checked => (true if @problem.positioning == 7) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">1級</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 8.5, :checked => (true if @problem.positioning == 8.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">初段</label>
+          <div class="radio-button">
+            <%= f.radio_button :positioning, 10, :checked => (true if @problem.positioning == 10) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /positioning %>
+
+    <%# footwork %>
+    <div class="mb-3 problem-margin">
+      <label for="exampleFormControlInput1" class="form-label">フットワーク</label>
+      <div class="radio-box">
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">0</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 0, :checked => (true if @problem.footwork == 0) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">6級</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 1, :checked => (true if @problem.footwork == 1) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">5級</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 2.5, :checked => (true if @problem.footwork == 2.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">4級</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 4, :checked => (true if @problem.footwork == 4) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">3級</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 5.5, :checked => (true if @problem.footwork == 5.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">2級</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 7, :checked => (true if @problem.footwork == 7) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">1級</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 8.5, :checked => (true if @problem.footwork == 8.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">初段</label>
+          <div class="radio-button">
+            <%= f.radio_button :footwork, 10, :checked => (true if @problem.footwork == 10) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /footwork %>
+
+    <%# coordination %>
+    <div class="mb-3 problem-margin">
+      <label for="exampleFormControlInput1" class="form-label">コーディネーション</label>
+      <div class="radio-box">
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">0</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 0, :checked => (true if @problem.coordination == 0) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">6級</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 1, :checked => (true if @problem.coordination == 1) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">5級</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 2.5, :checked => (true if @problem.coordination == 2.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">4級</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 4, :checked => (true if @problem.coordination == 4) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">3級</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 5.5, :checked => (true if @problem.coordination == 5.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">2級</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 7, :checked => (true if @problem.coordination == 7) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">1級</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 8.5, :checked => (true if @problem.coordination == 8.5) %>
+          </div>
+        </div>
+        <div class="radio">
+          <label for="exampleFormControlInput1" class="radio-text">初段</label>
+          <div class="radio-button">
+            <%= f.radio_button :coordination, 10, :checked => (true if @problem.coordination == 10) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /coordination %>
+
+    <%= f.submit "変更する" ,class:"btn btn-secondary submit-btn btn-margin2" %>
+  <% end %>
+  <%= link_to "戻る", gym_problem_list_problems_path, class: "btn btn-outline-dark submit-btn2" %>
+</div>
+
+<%= render "shared/footer" %>

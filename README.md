@@ -68,13 +68,13 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
-| grades_id          | integer    | null: false                    |
-| holding            | integer    | null: false                    |
-| physical           | integer    | null: false                    |
-| move               | integer    | null: false                    |
-| positioning        | integer    | null: false                    |
-| footwork           | integer    | null: false                    |
-| coordination       | integer    | null: false                    |
+| grade_id           | integer    | null: false                    |
+| holding            | float      | null: false                    |
+| physical           | float      | null: false                    |
+| move               | float      | null: false                    |
+| positioning        | float      | null: false                    |
+| footwork           | float      | null: false                    |
+| coordination       | float      | null: false                    |
 | admin              | references | null: false, foreign_key: true |
 | problem_list       | references | null: false, foreign_key: true |
 

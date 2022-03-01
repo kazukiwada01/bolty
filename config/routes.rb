@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post "partners/done"
   resources :admins, only: [:show, :edit, :update]
   resources :gyms, only: [:new, :create, :edit, :update, :destroy] do
-    resources :problem_lists, only: [:index, :new, :create, :edit, :update]
+    resources :problem_lists, only: [:index, :new, :create, :edit, :update] do
+      resources :problems, only: [:index, :create, :edit, :update, :destroy]
+    end
   end
 end
