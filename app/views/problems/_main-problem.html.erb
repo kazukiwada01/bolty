@@ -1,6 +1,36 @@
 <div class="main-problem">
   <h1 class="h3 mb-3 fw-normal">課題一覧</h1>
-  <% @problem_list.problems.each do |problem| %>
+
+  <div class="dropdown2"> 
+    <div class="btn btn-outline-dark btn-size11" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="dropdown-flex">
+        <div class="dropdown-text">表示順</div>
+        <div class="dropdown-toggle"></div>
+      </div>
+    </div>
+    <div class="dropdown-menu menu-size" aria-labelledby="navbarDropdown">
+      <div class="sort">
+        <%= link_to "登録順(昇順)", gym_problem_list_problems_path(option: "A"), class: "sort-link" %>
+      </div>
+      <div class="sort">
+        <%= link_to "登録順(降順)", gym_problem_list_problems_path(option: "B"), class: "sort-link" %>
+      </div>
+      <div class="sort">
+        <%= link_to "課題名(昇順)", gym_problem_list_problems_path(option: "C"), class: "sort-link" %>
+      </div>
+      <div class="sort">
+        <%= link_to "課題名(降順)", gym_problem_list_problems_path(option: "D"), class: "sort-link" %>
+      </div>
+      <div class="sort">
+        <%= link_to "グレード(昇順)", gym_problem_list_problems_path(option: "E"), class: "sort-link" %>
+      </div>
+      <div class="sort2">
+        <%= link_to "グレード(降順)", gym_problem_list_problems_path(option: "F"), class: "sort-link" %>
+      </div>
+    </div>
+  </div>
+
+  <% @problems.each do |problem| %>
     <div class="problem-box2">
       <div class="problem4"><%= problem.name %></div>
       <div class="problem4">( <%= problem.grade.name %> )</div>

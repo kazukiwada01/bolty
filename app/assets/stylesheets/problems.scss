@@ -5,7 +5,7 @@
 .main-problem{
   width: calc(100vw - 380px);
   text-align: center;
-  margin: 30px auto;
+  margin: 30px 20px;
 }
 .side-problem{
   width: 380px;
@@ -51,7 +51,6 @@
 .problem-box{
   display: flex;
   justify-content: center;
-  margin: 0 20px;
 }
 .problem2{
   height: 50px;
@@ -71,7 +70,7 @@
 }
 .problem-box2{
   display: flex;
-  margin: 20px 35px 10px 30px;
+  margin: 20px 10px 10px 5px;
 }
 .problem-img{
   margin: 0 0 0 auto;
@@ -82,7 +81,41 @@
   margin-right: 5px;
 }
 .margin-left{
-  margin-left: 10px;
+  margin-left: 12px;
+}
+.btn-size11{
+  width: 180px;
+  margin-bottom: 20px;
+}
+.dropdown2{
+  width: 180px;
+  margin: 0 0 0 auto;
+}
+.dropdown-flex{
+  display: flex;
+  justify-content: space-between;
+}
+.dropdown-text{
+  font-size: 18px;
+}
+.menu-size{
+  width: 180px !important;
+}
+.sort-link{
+  text-decoration: none;
+  margin: 20px 0;
+  color: black;
+}
+.sort{
+  font-size: 18px;
+  border-bottom: 1px solid black;
+  padding: 0 0 5px 5px;
+  margin: 0 10px 10px 10px;
+}
+.sort2{
+  font-size: 18px;
+  margin: 0 10px;
+  padding-left: 5px;
 }
 
 @media screen and (max-width: 992px) {

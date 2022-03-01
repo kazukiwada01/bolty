@@ -1,10 +1,23 @@
 class ProblemsController < ApplicationController
-  before_action :authenticate_admin!, only: [:create, :edit, :destroy]
+  before_action :authenticate_admin!, only: [:index, :create, :edit, :destroy]
   before_action :set_problem_list, only: [:index, :create]
   before_action :set_problem, only: [:edit, :update, :destroy]
+  before_action :problem_list_check, only: [:index, :edit, :update, :destroy]
 
   def index
-    @problems = @problem_list.problems.includes(:problem_list_id)
+    if params[:option] == "B" || params[:option] == nil
+      @problems = @problem_list.problems.order(id: :desc)
+    elsif params[:option] == "A"
+      @problems = @problem_list.problems.order(id: :asc)
+    elsif params[:option] == "C"
+      @problems = @problem_list.problems.order(name: :asc).order(grade_id: :asc)
+    elsif params[:option] == "D"
+      @problems = @problem_list.problems.order(name: :desc).order(grade_id: :asc)
+    elsif params[:option] == "E"
+      @problems = @problem_list.problems.order(grade_id: :asc).order(name: :asc)
+    elsif params[:option] == "F"
+      @problems = @problem_list.problems.order(grade_id: :desc).order(name: :asc)
+    end
     @problem = Problem.new
   end
 
@@ -44,5 +57,11 @@ class ProblemsController < ApplicationController
 
   def set_problem
     @problem = Problem.find(params[:id])
+  end
+
+  def problem_list_check
+    unless @problem_list.admin == current_admin
+      redirect_to admin_path(current_admin)
+    end
   end
 end
