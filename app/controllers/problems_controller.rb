@@ -1,8 +1,8 @@
 class ProblemsController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :create, :edit, :destroy]
-  before_action :set_problem_list, only: [:index, :create]
-  before_action :set_problem, only: [:edit, :update, :destroy]
+  before_action :set_problem_list, only: [:index, :create, :edit, :update, :destroy]
   before_action :problem_list_check, only: [:index, :edit, :update, :destroy]
+  before_action :set_problem, only: [:edit, :update, :destroy]
 
   def index
     if params[:option] == "B" || params[:option] == nil
