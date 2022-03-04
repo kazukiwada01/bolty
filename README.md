@@ -10,7 +10,7 @@
 
 ### Association
 
-- has_many :check_sheets
+- has_many :results
 
 ## admins テーブル
 
@@ -61,7 +61,6 @@
 - belongs_to :admin
 - belongs_to :gym
 - has_many :problems
-- has_one :check_sheet
 
 ## problems テーブル
 
@@ -69,12 +68,12 @@
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
 | grade_id           | integer    | null: false                    |
-| holding            | float      | null: false                    |
-| physical           | float      | null: false                    |
-| move               | float      | null: false                    |
-| positioning        | float      | null: false                    |
-| footwork           | float      | null: false                    |
-| coordination       | float      | null: false                    |
+| holding            | integer    | null: false                    |
+| physical           | integer    | null: false                    |
+| move               | integer    | null: false                    |
+| positioning        | integer    | null: false                    |
+| footwork           | integer    | null: false                    |
+| coordination       | integer    | null: false                    |
 | admin              | references | null: false, foreign_key: true |
 | problem_list       | references | null: false, foreign_key: true |
 
@@ -82,19 +81,25 @@
 
 - belongs_to :admin
 - belongs_to :problem_list
+- has_one :result
 
-## check_sheets テーブル
+## results テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| climbs_id          | integer    |                                |
+| holding            | integer    | null: false                    |
+| physical           | integer    | null: false                    |
+| move               | integer    | null: false                    |
+| positioning        | integer    | null: false                    |
+| footwork           | integer    | null: false                    |
+| coordination       | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | problem_list       | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :problem_list
+- belongs_to :problem
 
 ## partners テーブル
 
