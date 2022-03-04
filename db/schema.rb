@@ -86,12 +86,12 @@ ActiveRecord::Schema.define(version: 2022_02_21_135102) do
   create_table "problems", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "grade_id", null: false
-    t.float "holding", null: false
-    t.float "physical", null: false
-    t.float "move", null: false
-    t.float "positioning", null: false
-    t.float "footwork", null: false
-    t.float "coordination", null: false
+    t.integer "holding", null: false
+    t.integer "physical", null: false
+    t.integer "move", null: false
+    t.integer "positioning", null: false
+    t.integer "footwork", null: false
+    t.integer "coordination", null: false
     t.bigint "admin_id", null: false
     t.bigint "problem_list_id", null: false
     t.index ["admin_id"], name: "index_problems_on_admin_id"
