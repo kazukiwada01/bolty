@@ -23,9 +23,8 @@ class ProblemsController < ApplicationController
 
   def create
     @problem = Problem.new(problem_params)
-    if @problem.save
-      redirect_to gym_problem_list_problems_path
-    end
+    @problem.save
+    redirect_to gym_problem_list_problems_path
   end
 
   def edit
