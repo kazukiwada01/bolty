@@ -47,6 +47,7 @@
 
 - belongs_to :admin
 - has_many :problem_lists
+- has_many :results
 
 ## problem_lists テーブル
 
@@ -81,12 +82,13 @@
 
 - belongs_to :admin
 - belongs_to :problem_list
-- has_one :result
+- has_many :results
 
 ## results テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
+| climb              | string     | null: false                    |
 | holding            | integer    | null: false                    |
 | physical           | integer    | null: false                    |
 | move               | integer    | null: false                    |
@@ -94,11 +96,13 @@
 | footwork           | integer    | null: false                    |
 | coordination       | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
-| problem_list       | references | null: false, foreign_key: true |
+| gym                | references | null: false, foreign_key: true |
+| problem            | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :gym
 - belongs_to :problem
 
 ## partners テーブル
