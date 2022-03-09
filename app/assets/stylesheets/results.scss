@@ -13,8 +13,8 @@
 }
 .problem5{
   text-align: center;
-  height: 50px;
-  padding-top: 10px;
+  height: 60px;
+  padding-top: 15px;
   font-size: 20px;
   background-color: #eeeeee;
   border: 0.5px solid lightgray;
@@ -22,10 +22,19 @@
 .btn-size12{
   font-size: 20px !important;
   width: 100% !important;
-  height: 50px !important;
-  padding-top: 10px !important;
+  height: 60px !important;
+  padding-top: 15px !important;
   border: 0.5px solid lightgrey !important;
   border-radius: 0 !important;
+}
+.btn-size13{
+  font-size: 20px !important;
+  width: 100% !important;
+  height: 60px !important;
+  padding-top: 15px !important;
+  border: 0.5px solid lightgrey !important;
+  border-radius: 0 !important;
+  opacity: 0.8;
 }
 .check-box{
   display: flex;
@@ -47,6 +56,10 @@
   font-size: 20px;
   padding: 0px 30px 0 10px;
 }
+.result-text2{
+  font-size: 20px;
+  padding: 0px 5px 0 10px;
+}
 .result-btn{
   text-align: center;
   margin: 60px 0 100px 0;
@@ -62,4 +75,11 @@
 }
 .hidden-box{
   display: none;
+}
+.submit-btn3{
+  width: 300px;
+  height: 50px;
+  padding-top: 8px !important;
+  margin-bottom: 20px;
+  font-size: 20px !important;
 }

@@ -4,6 +4,7 @@ function result (){
   const select3 = document.getElementById("select3");
   const select4 = document.getElementById("select4");
   const select5 = document.getElementById("select5");
+  const select6 = document.getElementById("select6");
 
   const holding = document.getElementById("holding").value;
   const physical = document.getElementById("physical").value;
@@ -51,6 +52,14 @@ function result (){
     document.getElementById("result-positioning").value = positioning * 0.5;
     document.getElementById("result-footwork").value = footwork * 0.5;
     document.getElementById("result-coordination").value = coordination * 0.5;
+  })
+  select6.addEventListener("click", function() {
+    document.getElementById("result-holding").value = holding * 0;
+    document.getElementById("result-physical").value = physical * 0;
+    document.getElementById("result-move").value = move * 0;
+    document.getElementById("result-positioning").value = positioning * 0;
+    document.getElementById("result-footwork").value = footwork * 0;
+    document.getElementById("result-coordination").value = coordination * 0;
   })
 };
 
