@@ -1,8 +1,16 @@
-<%= render "shared/sub-header" %>
+<% if admin_signed_in? %>
+  <%= render "shared/sub-header" %>
+<% else %>
+  <%= render "shared/sub-header2" %>
+<% end %>
 
-<div class="wrapper">
-  <%= render "problems/side-problem" %>
-  <%= render "problems/main-problem" %>
-</div>
+<% if @problem_list.admin == current_admin %>
+  <div class="wrapper">
+    <%= render "problems/side-problem" %>
+    <%= render "problems/main-problem" %>
+  </div>
+<% else %>
+  <%= render "problems/check-list" %>
+<% end %>
 
 <%= render "shared/footer" %>

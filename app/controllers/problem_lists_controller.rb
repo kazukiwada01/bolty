@@ -5,7 +5,7 @@ class ProblemListsController < ApplicationController
   before_action :gym_check, only: [:edit, :update]
 
   def index
-      @problem_lists = @gym.problem_lists.includes(:gym)
+    @problem_lists = @gym.problem_lists.includes(:gym)
   end
 
   def new

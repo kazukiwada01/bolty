@@ -1,24 +1,35 @@
 class ProblemsController < ApplicationController
-  before_action :authenticate_admin!, only: [:index, :create, :edit, :destroy]
+  before_action :authenticate_admin!, only: [:create, :edit, :destroy]
   before_action :set_problem_list, only: [:index, :create, :edit, :update, :destroy]
-  before_action :problem_list_check, only: [:index, :edit, :update, :destroy]
+  before_action :problem_list_check, only: [:edit, :update, :destroy]
   before_action :set_problem, only: [:edit, :update, :destroy]
 
   def index
-    if params[:option] == "B" || params[:option] == nil
-      @problems = @problem_list.problems.order(id: :desc)
-    elsif params[:option] == "A"
-      @problems = @problem_list.problems.order(id: :asc)
-    elsif params[:option] == "C"
-      @problems = @problem_list.problems.order(name: :asc).order(grade_id: :asc)
-    elsif params[:option] == "D"
-      @problems = @problem_list.problems.order(name: :desc).order(grade_id: :asc)
-    elsif params[:option] == "E"
-      @problems = @problem_list.problems.order(grade_id: :asc).order(name: :asc)
-    elsif params[:option] == "F"
-      @problems = @problem_list.problems.order(grade_id: :desc).order(name: :asc)
+    unless @problem_list.admin == current_admin
+      @gym = Gym.find(params[:gym_id])
+      @problems2 = @problem_list.problems.where(grade_id: 2).order(name: :asc)
+      @problems3 = @problem_list.problems.where(grade_id: 3).order(name: :asc)
+      @problems4 = @problem_list.problems.where(grade_id: 4).order(name: :asc)
+      @problems5 = @problem_list.problems.where(grade_id: 5).order(name: :asc)
+      @problems6 = @problem_list.problems.where(grade_id: 6).order(name: :asc)
+      @problems7 = @problem_list.problems.where(grade_id: 7).order(name: :asc)
+      @problems8 = @problem_list.problems.where(grade_id: 8).order(name: :asc)
+    else
+      if params[:option] == "B" || params[:option] == nil
+        @problems = @problem_list.problems.order(id: :desc)
+      elsif params[:option] == "A"
+        @problems = @problem_list.problems.order(id: :asc)
+      elsif params[:option] == "C"
+        @problems = @problem_list.problems.order(name: :asc).order(grade_id: :asc)
+      elsif params[:option] == "D"
+        @problems = @problem_list.problems.order(name: :desc).order(grade_id: :asc)
+      elsif params[:option] == "E"
+        @problems = @problem_list.problems.order(grade_id: :asc).order(name: :asc)
+      elsif params[:option] == "F"
+        @problems = @problem_list.problems.order(grade_id: :desc).order(name: :asc)
+      end
+      @problem = Problem.new
     end
-    @problem = Problem.new
   end
 
   def create
