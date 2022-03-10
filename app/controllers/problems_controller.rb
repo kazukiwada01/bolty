@@ -6,14 +6,18 @@ class ProblemsController < ApplicationController
 
   def index
     unless @problem_list.admin == current_admin
-      @gym = Gym.find(params[:gym_id])
-      @problems2 = @problem_list.problems.where(grade_id: 2).order(name: :asc)
-      @problems3 = @problem_list.problems.where(grade_id: 3).order(name: :asc)
-      @problems4 = @problem_list.problems.where(grade_id: 4).order(name: :asc)
-      @problems5 = @problem_list.problems.where(grade_id: 5).order(name: :asc)
-      @problems6 = @problem_list.problems.where(grade_id: 6).order(name: :asc)
-      @problems7 = @problem_list.problems.where(grade_id: 7).order(name: :asc)
-      @problems8 = @problem_list.problems.where(grade_id: 8).order(name: :asc)
+      if user_signed_in?
+        @gym = Gym.find(params[:gym_id])
+        @problems2 = @problem_list.problems.where(grade_id: 2).order(name: :asc)
+        @problems3 = @problem_list.problems.where(grade_id: 3).order(name: :asc)
+        @problems4 = @problem_list.problems.where(grade_id: 4).order(name: :asc)
+        @problems5 = @problem_list.problems.where(grade_id: 5).order(name: :asc)
+        @problems6 = @problem_list.problems.where(grade_id: 6).order(name: :asc)
+        @problems7 = @problem_list.problems.where(grade_id: 7).order(name: :asc)
+        @problems8 = @problem_list.problems.where(grade_id: 8).order(name: :asc)
+      else
+        redirect_to user_session_path
+      end
     else
       if params[:option] == "B" || params[:option] == nil
         @problems = @problem_list.problems.order(id: :desc)

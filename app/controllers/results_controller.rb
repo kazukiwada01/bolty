@@ -1,4 +1,5 @@
 class ResultsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create, :edit, :update]
   before_action :set_problem, only: [:edit, :update]
   before_action :set_result, only: [:edit, :update]
 
