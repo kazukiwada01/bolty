@@ -44,8 +44,6 @@ class GymsController < ApplicationController
   end
 
   def gym_check
-    unless @gym.admin == current_admin
-      redirect_to admin_path(current_admin)
-    end
+    redirect_to admin_path(current_admin) unless @gym.admin == current_admin
   end
 end

@@ -25,7 +25,7 @@ class ResultsController < ApplicationController
 
   def result_params
     params.require(:result).permit(:climb, :holding, :physical, :move, :positioning, :footwork,
-      :coordination).merge(user_id: current_user.id, gym_id: params[:gym_id], problem_id: params[:problem_id])
+                                   :coordination).merge(user_id: current_user.id, gym_id: params[:gym_id], problem_id: params[:problem_id])
   end
 
   def set_problem

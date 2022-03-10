@@ -5,34 +5,33 @@ class ProblemsController < ApplicationController
   before_action :set_problem, only: [:edit, :update, :destroy]
 
   def index
-    unless @problem_list.admin == current_admin
-      if user_signed_in?
-        @gym = Gym.find(params[:gym_id])
-        @problems2 = @problem_list.problems.where(grade_id: 2).order(name: :asc)
-        @problems3 = @problem_list.problems.where(grade_id: 3).order(name: :asc)
-        @problems4 = @problem_list.problems.where(grade_id: 4).order(name: :asc)
-        @problems5 = @problem_list.problems.where(grade_id: 5).order(name: :asc)
-        @problems6 = @problem_list.problems.where(grade_id: 6).order(name: :asc)
-        @problems7 = @problem_list.problems.where(grade_id: 7).order(name: :asc)
-        @problems8 = @problem_list.problems.where(grade_id: 8).order(name: :asc)
-      else
-        redirect_to user_session_path
-      end
-    else
-      if params[:option] == "B" || params[:option] == nil
+    if @problem_list.admin == current_admin
+      if params[:option] == 'B' || params[:option].nil?
         @problems = @problem_list.problems.order(id: :desc)
-      elsif params[:option] == "A"
+      elsif params[:option] == 'A'
         @problems = @problem_list.problems.order(id: :asc)
-      elsif params[:option] == "C"
+      elsif params[:option] == 'C'
         @problems = @problem_list.problems.order(name: :asc).order(grade_id: :asc)
-      elsif params[:option] == "D"
+      elsif params[:option] == 'D'
         @problems = @problem_list.problems.order(name: :desc).order(grade_id: :asc)
-      elsif params[:option] == "E"
+      elsif params[:option] == 'E'
         @problems = @problem_list.problems.order(grade_id: :asc).order(name: :asc)
-      elsif params[:option] == "F"
+      elsif params[:option] == 'F'
         @problems = @problem_list.problems.order(grade_id: :desc).order(name: :asc)
       end
       @problem = Problem.new
+    elsif user_signed_in?
+      @gym = Gym.find(params[:gym_id])
+      @problems2 = @problem_list.problems.where(grade_id: 2).order(name: :asc)
+      @problems3 = @problem_list.problems.where(grade_id: 3).order(name: :asc)
+      @problems4 = @problem_list.problems.where(grade_id: 4).order(name: :asc)
+      @problems5 = @problem_list.problems.where(grade_id: 5).order(name: :asc)
+      @problems6 = @problem_list.problems.where(grade_id: 6).order(name: :asc)
+      @problems7 = @problem_list.problems.where(grade_id: 7).order(name: :asc)
+      @problems8 = @problem_list.problems.where(grade_id: 8).order(name: :asc)
+      @result = Result.find_by(params[problem_id: :problem_id])
+    else
+      redirect_to user_session_path
     end
   end
 
@@ -62,7 +61,7 @@ class ProblemsController < ApplicationController
 
   def problem_params
     params.require(:problem).permit(:name, :grade_id, :holding, :physical, :move, :positioning,
-      :footwork, :coordination).merge(admin_id: current_admin.id, problem_list_id: params[:problem_list_id])
+                                    :footwork, :coordination).merge(admin_id: current_admin.id, problem_list_id: params[:problem_list_id])
   end
 
   def set_problem_list
@@ -74,8 +73,6 @@ class ProblemsController < ApplicationController
   end
 
   def problem_list_check
-    unless @problem_list.admin == current_admin
-      redirect_to admin_path(current_admin)
-    end
+    redirect_to admin_path(current_admin) unless @problem_list.admin == current_admin
   end
 end
