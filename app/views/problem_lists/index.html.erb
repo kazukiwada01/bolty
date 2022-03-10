@@ -33,7 +33,7 @@
         <%= link_to "名前を変更する", edit_gym_problem_list_path(@gym, problem_list.id), class: "btn btn-outline-dark btn-size9" %>
         <%= link_to "課題を作成する", gym_problem_list_problems_path(@gym, problem_list.id), class: "btn btn-outline-dark btn-size9" %>
       <% else %>
-        <%= link_to "挑戦する", "#", class: "btn btn-outline-dark btn-size10" %>
+        <%= link_to "挑戦する", gym_problem_list_problems_path(@gym, problem_list.id), class: "btn btn-outline-dark btn-size10" %>
       <% end %>
     </div>
   <% end %>

@@ -2,6 +2,7 @@ class Gym < ApplicationRecord
   belongs_to :admin
   has_one_attached :image
   has_many :problem_lists
+  has_many :results
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture

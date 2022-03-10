@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_135102) do
+ActiveRecord::Schema.define(version: 2022_03_05_051824) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -86,16 +86,32 @@ ActiveRecord::Schema.define(version: 2022_02_21_135102) do
   create_table "problems", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "grade_id", null: false
-    t.float "holding", null: false
-    t.float "physical", null: false
-    t.float "move", null: false
-    t.float "positioning", null: false
-    t.float "footwork", null: false
-    t.float "coordination", null: false
+    t.integer "holding", null: false
+    t.integer "physical", null: false
+    t.integer "move", null: false
+    t.integer "positioning", null: false
+    t.integer "footwork", null: false
+    t.integer "coordination", null: false
     t.bigint "admin_id", null: false
     t.bigint "problem_list_id", null: false
     t.index ["admin_id"], name: "index_problems_on_admin_id"
     t.index ["problem_list_id"], name: "index_problems_on_problem_list_id"
+  end
+
+  create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "climb", null: false
+    t.integer "holding", null: false
+    t.integer "physical", null: false
+    t.integer "move", null: false
+    t.integer "positioning", null: false
+    t.integer "footwork", null: false
+    t.integer "coordination", null: false
+    t.bigint "user_id", null: false
+    t.bigint "gym_id", null: false
+    t.bigint "problem_id", null: false
+    t.index ["gym_id"], name: "index_results_on_gym_id"
+    t.index ["problem_id"], name: "index_results_on_problem_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -117,4 +133,7 @@ ActiveRecord::Schema.define(version: 2022_02_21_135102) do
   add_foreign_key "problem_lists", "gyms"
   add_foreign_key "problems", "admins"
   add_foreign_key "problems", "problem_lists"
+  add_foreign_key "results", "gyms"
+  add_foreign_key "results", "problems"
+  add_foreign_key "results", "users"
 end

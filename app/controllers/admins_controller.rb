@@ -29,8 +29,6 @@ class AdminsController < ApplicationController
   end
 
   def admin_check
-    unless @admin == current_admin
-      redirect_to admin_path(current_admin)
-    end
+    redirect_to admin_path(current_admin) unless @admin == current_admin
   end
 end

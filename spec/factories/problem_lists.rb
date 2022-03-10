@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :problem_list do
-    name   { 'マンスリー' }
+    name { 'マンスリー' }
     admin
     gym
   end

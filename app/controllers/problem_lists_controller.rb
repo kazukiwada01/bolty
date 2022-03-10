@@ -5,7 +5,7 @@ class ProblemListsController < ApplicationController
   before_action :gym_check, only: [:edit, :update]
 
   def index
-      @problem_lists = @gym.problem_lists.includes(:gym)
+    @problem_lists = @gym.problem_lists.includes(:gym)
   end
 
   def new
@@ -40,7 +40,8 @@ class ProblemListsController < ApplicationController
 
   def problem_list_params
     params.require(:problem_list).permit(:name, :timestamps).merge(
-      admin_id: current_admin.id, gym_id: @gym.id)
+      admin_id: current_admin.id, gym_id: @gym.id
+    )
   end
 
   def set_gym
@@ -52,8 +53,6 @@ class ProblemListsController < ApplicationController
   end
 
   def gym_check
-    unless @gym.admin == current_admin
-      redirect_to admin_path(current_admin)
-    end
+    redirect_to admin_path(current_admin) unless @gym.admin == current_admin
   end
 end

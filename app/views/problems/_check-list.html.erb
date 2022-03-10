@@ -1,0 +1,76 @@
+<div class="check-list-top">
+  <h1 class="h3 mb-3 fw-normal">チェックシート</h1>
+</div>
+
+<div class="problems-box">
+  <div class="grade-problems">
+    <div class="problem5">6級</div>
+    <% @problems2.each do |problem| %>
+      <% unless problem.results.where(user_id: current_user.id).present? %>
+        <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
+      <% else %>
+        <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="grade-problems">
+    <div class="problem5">5級</div>
+    <% @problems3.each do |problem| %>
+      <% unless problem.results.where(user_id: current_user.id).present? %>
+        <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
+      <% else %>
+        <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="grade-problems">
+    <div class="problem5">4級</div>
+    <% @problems4.each do |problem| %>
+      <% unless problem.results.where(user_id: current_user.id).present? %>
+        <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
+      <% else %>
+        <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="grade-problems">
+    <div class="problem5">3級</div>
+    <% @problems5.each do |problem| %>
+      <% unless problem.results.where(user_id: current_user.id).present? %>
+        <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
+      <% else %>
+        <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="grade-problems">
+    <div class="problem5">2級</div>
+    <% @problems6.each do |problem| %>
+      <% unless problem.results.where(user_id: current_user.id).present? %>
+        <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
+      <% else %>
+        <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="grade-problems">
+    <div class="problem5">1級</div>
+    <% @problems7.each do |problem| %>
+      <% unless problem.results.where(user_id: current_user.id).present? %>
+        <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
+      <% else %>
+        <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="grade-problems">
+    <div class="problem5">初段</div>
+    <% @problems8.each do |problem| %>
+      <% unless problem.results.where(user_id: current_user.id).present? %>
+        <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
+      <% else %>
+        <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

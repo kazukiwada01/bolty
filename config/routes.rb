@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   resources :admins, only: [:show, :edit, :update]
   resources :gyms, only: [:new, :create, :edit, :update, :destroy] do
     resources :problem_lists, only: [:index, :new, :create, :edit, :update] do
-      resources :problems, only: [:index, :create, :edit, :update, :destroy]
+      resources :problems, only: [:index, :create, :edit, :update, :destroy] do
+        resources :results, only: [:index, :create, :edit, :update]
+      end
     end
   end
 end
