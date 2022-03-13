@@ -15,6 +15,10 @@
   font-size: 19px !important;
   width: 130px !important;
 }
+.btn-size22{
+  font-size: 19px !important;
+  width: 180px !important;
+}
 @media screen and (max-width: 992px) {
   .navbar-right{
     display: block;
@@ -28,6 +32,12 @@
     padding-bottom: 20px;
   }
   .btn-size{
+    font-size: 24px !important;
+    width: 200px !important;
+    height: 50px !important;
+    margin-top: 12px !important;
+  }
+  .btn-size22{
     font-size: 24px !important;
     width: 200px !important;
     height: 50px !important;

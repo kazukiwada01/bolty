@@ -1,14 +1,19 @@
+.info-wrap{
+  min-height: 100vh;
+  width: 100vw;
+}
 .info-title{
   text-align: center;
   margin-top: 60px;
 }
 .info-list{
   display: flex;
-  justify-content: center;
+  width: 70%;
+  margin: 0 15%;
 }
 .info-text{
   height: 60px;
-  width: 300px;
+  width: 30%;
   font-size: 20px;
   padding: 15px 0 0 20px;
   border: 0.5px solid lightgrey;
@@ -17,7 +22,7 @@
 }
 .info{
   height: 60px;
-  width: 600px;
+  width: 70%;
   font-size: 20px;
   padding: 15px 0 0 20px;
   border: 0.5px solid lightgrey;
@@ -28,7 +33,7 @@
 }
 .btn-size5{
   font-size: 20px !important;
-  width: 900px !important;
+  width: 70% !important;
 }
 .gym-text{
   margin-bottom: 50px;
@@ -38,15 +43,42 @@
 .info-gym{
   margin: 0 auto;
   text-align: center;
-  width: 900px;
-  height: 450px;
+  width: 70%;
+  height: 500px;
   border: 0.5px solid lightgrey;
 }
 .gym-img{
-  height: 430px;
+  height: 480px;
   margin: 10px 0;
 }
 .btn-size7{
   font-size: 20px !important;
-  width: 298px !important;
+  width: 23% !important;
+}
+@media screen and (max-width: 992px) {
+  .info-list{
+    display: flex;
+    width: 90%;
+    margin: 0 5%;
+  }
+  .btn-size5{
+    font-size: 20px !important;
+    width: 90% !important;
+  }
+  .info-gym{
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    height: 450px;
+    border: 0.5px solid lightgrey;
+  }
+  .gym-img{
+    height: 430px;
+    margin: 10px 0;
+    max-width: 100%;
+  }
+  .btn-size7{
+    font-size: 20px !important;
+    width: 30% !important;
+  }
 }
