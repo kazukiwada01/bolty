@@ -23,10 +23,10 @@
             </div>
           <% elsif admin_signed_in? %>
             <div class="list-btn">
-              <%= link_to "ADMIN PAGE", admin_path(current_admin), class: "btn btn-outline-dark btn-size2" %>
+              <%= link_to "ADMIN PAGE", admin_path(current_admin), class: "btn btn-outline-dark btn-size22" %>
             </div>
             <div class="list-btn">
-              <%= link_to "LOG OUT", destroy_admin_session_path, method: :delete, class: "btn btn-outline-dark btn-size2" %>
+              <%= link_to "LOG OUT", destroy_admin_session_path, method: :delete, class: "btn btn-outline-dark btn-size22" %>
             </div>
           <% else %>
             <div class="list-btn">
