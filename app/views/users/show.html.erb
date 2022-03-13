@@ -1,0 +1,41 @@
+<%= render "shared/sub-header2" %>
+
+<div class="my-page-title">
+  <h1 class="h3 mb-3 fw-normal">Your Ability</h1>
+</div>
+
+<%= render "users/class" %>
+
+<%= render "users/radar-chart" %>
+
+<div class="scores">
+  <div class="score-text">保持力</div>
+  <div class="score-text">フィジカル</div>
+  <div class="score-text">ムーブ</div>
+  <div class="score-text">ﾎﾟｼﾞｼｮﾆﾝｸﾞ</div>
+  <div class="score-text">フットワーク</div>
+  <div class="score-text">ｺｰﾃﾞｨﾈｰｼｮﾝ</div>
+</div>
+<div class="scores">
+  <div class="score">
+    <%= "#{@holding}pt" %>
+  </div>
+  <div class="score">
+    <%= "#{@physical}pt" %>
+  </div>
+  <div class="score">
+    <%= "#{@move}pt" %>
+  </div>
+  <div class="score">
+    <%= "#{@positioning}pt" %>
+  </div>
+  <div class="score">
+    <%= "#{@footwork}pt" %>
+  </div>
+  <div class="score">
+    <%= "#{@coordination.floor}pt" %>
+  </div>
+</div>
+<div class="grade-text">※ 6級(10-14pt)、5級(15-22pt)、4級(23-34pt)、3級(35-52pt)、2級(53-79pt)、1級(80-119pt)、初段(120pt-)</div>
+
+<%= render "shared/footer" %>

@@ -3,17 +3,18 @@
     <%= link_to image_tag("logo.png" ,size:"120x40" ,class:"nav-brand"), root_path %>
   </div>
   <div class="header-right">
-    <% if user_signed_in? %>
+    <% if request.path.include?("problems") %>
       <div class="list-btn">
-        <%= link_to "MY PAGE", "#", class: "btn btn-outline-dark btn-size2" %>
-      </div>
-      <div class="list-btn">
-        <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-size2" %>
-      </div>
-    <% else %>
-      <div class="list-btn">
-        <%= link_to "LOG IN", user_session_path, class: "btn btn-outline-dark btn-size2" %>
+        <%= link_to "PROBLEM LIST", gym_problem_lists_path, class: "btn btn-outline-dark btn-size2" %>
       </div>
     <% end %>
+    <% unless request.path.include?("users") %>
+      <div class="list-btn">
+        <%= link_to "MY PAGE", user_path(current_user), class: "btn btn-outline-dark btn-size2" %>
+      </div>
+    <% end %>
+    <div class="list-btn">
+      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-size2" %>
+    </div>
   </div>
 </div>
