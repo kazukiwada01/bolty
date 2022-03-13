@@ -1,0 +1,109 @@
+<% if @class.floor <= 149 %>
+  <div class="class-list">
+    <div class="label-img"></div>
+    <div class="class-img1">
+      <div Class="class">
+        <div class="class-text">class</div>
+        <div class="category">Beginner</div>
+        <div class="class-text"><%= "#{@class.floor}pt" %></div>
+      </div>
+    </div>
+    <div class="arrow">＞</div>
+    <div class="label-img2">
+      <div class ="label">
+        <div class="label-text">Middle</div>
+        <div class="label-text">150-249pt</div>
+      </div>
+    </div>
+  </div>
+<% elsif @class.floor >= 150 && @class.floor <= 249 %>
+  <div class="class-list">
+    <div class="label-img1">
+      <div class ="label">
+        <div class="label-text">Beginner</div>
+        <div class="label-text">50-149pt</div>
+      </div>
+    </div>
+    <div class="arrow">＜</div>
+    <div class="class-img2">
+      <div Class="class">
+        <div class="class-text">class</div>
+        <div class="category">Middle</div>
+        <div class="class-text"><%= "#{@class.floor}pt" %></div>
+      </div>
+    </div>
+    <div class="arrow">＞</div>
+    <div class="label-img3">
+      <div class ="label">
+        <div class="label-text">SuperMiddle</div>
+        <div class="label-text">250-399pt</div>
+      </div>
+    </div>
+  </div>
+<% elsif @class.floor >= 250 && @class.floor <= 399 %>
+  <div class="class-list">
+    <div class="label-img2">
+      <div class ="label">
+        <div class="label-text">Middle</div>
+        <div class="label-text">150-249pt</div>
+      </div>
+    </div>
+    <div class="arrow">＜</div>
+    <div class="class-img3">
+      <div Class="class">
+        <div class="class-text">class</div>
+        <div class="category2">SuperMiddle</div>
+        <div class="class-text"><%= "#{@class.floor}pt" %></div>
+      </div>
+    </div>
+    <div class="arrow">＞</div>
+    <div class="label-img4">
+      <div class ="label">
+        <div class="label-text">Master</div>
+        <div class="label-text">400-599pt</div>
+      </div>
+    </div>
+  </div>
+<% elsif @class.floor >= 400 && @class.floor <= 599 %>
+  <div class="class-list">
+    <div class="label-img3">
+      <div class ="label">
+        <div class="label-text">SuperMiddle</div>
+        <div class="label-text">250-399pt</div>
+      </div>
+    </div>
+    <div class="arrow">＜</div>
+    <div class="class-img4">
+      <div Class="class">
+        <div class="class-text">class</div>
+        <div class="category">Master</div>
+        <div class="class-text"><%= "#{@class.floor}pt" %></div>
+      </div>
+    </div>
+    <div class="arrow">＞</div>
+    <div class="label-img5">
+      <div class ="label">
+        <div class="label-text">Open</div>
+        <div class="label-text">600-900pt</div>
+      </div>
+    </div>
+  </div>
+<% elsif @class.floor >= 600 %>
+  <div class="class-list">
+    <div class="label-img4">
+      <div class ="label">
+        <div class="label-text">Master</div>
+        <div class="label-text">400-599pt</div>
+      </div>
+    </div>
+    <div class="arrow">＜</div>
+    <div class="class-img5">
+      <div Class="class">
+        <div class="class-text">class</div>
+        <div class="category">Open</div>
+        <div class="class-text"><%= "#{@class.floor}pt" %></div>
+      </div>
+    </div>
+    <div class="label-img-2"></div>
+  </div>
+<% end %>

@@ -1,3 +1,140 @@
+.my-page-title{
+  text-align: center;
+  margin-top: 50px;
+}
+.class-list{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 10%;
+}
+.label-img{
+  width: 180px;
+  height: 160px;
+  margin: 15px 7%;
+}
+.label-img-2{
+  width: 190px;
+  height: 160px;
+  margin: 15px 7%;
+}
+.label-img1{
+  background-image: image-url("beginner.png");
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  margin: 15px 4%;
+}
+.label-img2{
+  background-image: image-url("middle.png");
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  margin: 15px 4%;
+}
+.label-img3{
+  background-image: image-url("super_middle.png");
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  margin: 15px 4%;
+}
+.label-img4{
+  background-image: image-url("master.png");
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  margin: 15px 4%;
+}
+.label-img5{
+  background-image: image-url("open.png");
+  background-size: contain;
+  width: 160px;
+  height: 160px;
+  margin: 15px 4%;
+}
+@media screen and (max-width: 992px) {
+  .label-img{
+    width: 180px;
+    height: 160px;
+    margin: 15px 5%;
+  }
+  .label-img-2{
+    width: 185px;
+    height: 160px;
+    margin: 15px 5%;
+  }
+}
+.label{
+  text-align: center;
+  padding-top: 50px;
+}
+.label-text{
+  font-size: 20px;
+}
+.arrow{
+  font-size: 35px;
+  color: grey;
+  margin-top: 70px;
+}
+.class-img1{
+  background-image: image-url("beginner.png");
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  margin: 0 4%;
+}
+.class-img2{
+  margin: 0 auto;
+  background-image: image-url("middle.png");
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  margin: 0 4%;
+}
+.class-img3{
+  margin: 0 auto;
+  background-image: image-url("super_middle.png");
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  margin: 0 4%;
+}
+.class-img4{
+  margin: 0 auto;
+  background-image: image-url("master.png");
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  margin: 0 4%;
+}
+.class-img5{
+  margin: 0 auto;
+  background-image: image-url("open.png");
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  margin: 0 4%;
+}
+.class{
+  text-align: center;
+  padding-top: 40px;
+}
+.class-text{
+  font-size: 24px;
+}
+.category{
+  font-size: 32px;
+}
+.category2{
+  font-size: 28px;
+  padding: 4px 0;
+}
+.centering{
+  padding: 0 60px 0 30px;
+}
+.radar-chart{
+  width: 100%;
+}
 .scores{
   display: flex;
   justify-content: center;
@@ -10,6 +147,7 @@
   font-size: 20px;
   background-color: #eeeeee;
   border: 0.5px solid lightgrey;
+  margin-top: 50px;
 }
 .score{
   text-align: center;
@@ -18,5 +156,10 @@
   padding-top: 9px;
   font-size: 20px;
   border: 0.5px solid lightgrey;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+}
+.grade-text{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 100px;
 }

@@ -1,97 +1,41 @@
 <%= render "shared/sub-header2" %>
 
-<div class="info-title">
-  <h1 class="h3 mb-3 fw-normal">Your class</h1>
+<div class="my-page-title">
+  <h1 class="h3 mb-3 fw-normal">Your Ability</h1>
 </div>
 
-<div class="info-title">
-  <h1 class="h3 mb-3 fw-normal">Your ability</h1>
-</div>
+<%= render "users/class" %>
 
-<div class="info-title">
-  <h1 class="h3 mb-3 fw-normal">Score</h1>
-</div>
+<%= render "users/radar-chart" %>
 
 <div class="scores">
   <div class="score-text">保持力</div>
   <div class="score-text">フィジカル</div>
   <div class="score-text">ムーブ</div>
-  <div class="score-text">ポジショニング</div>
+  <div class="score-text">ﾎﾟｼﾞｼｮﾆﾝｸﾞ</div>
   <div class="score-text">フットワーク</div>
-  <div class="score-text">コーディネーション</div>
+  <div class="score-text">ｺｰﾃﾞｨﾈｰｼｮﾝ</div>
 </div>
 <div class="scores">
-  <%# holding %>
   <div class="score">
-    <% @sum = 0 %>
-    <% @count = 0 %>
-    <% @holdings.each do |score| %>
-     <% @sum += score.holding %>
-     <% @count += 1 %>
-    <% end %>
-    <%= "#{@sum / @count}pt" %>
+    <%= "#{@holding}pt" %>
   </div>
-  <%# /holding %>
-
-  <%# physical %>
   <div class="score">
-    <% @sum = 0 %>
-    <% @count = 0 %>
-    <% @physicals.each do |score| %>
-     <% @sum += score.physical %>
-     <% @count += 1 %>
-    <% end %>
-    <%= "#{@sum / @count}pt" %>
+    <%= "#{@physical}pt" %>
   </div>
-  <%# /physical %>
-
-  <%# move %>
   <div class="score">
-    <% @sum = 0 %>
-    <% @count = 0 %>
-    <% @moves.each do |score| %>
-     <% @sum += score.move %>
-     <% @count += 1 %>
-    <% end %>
-    <%= "#{@sum / @count}pt" %>
+    <%= "#{@move}pt" %>
   </div>
-  <%# /move %>
-
-  <%# positioning %>
   <div class="score">
-    <% @sum = 0 %>
-    <% @count = 0 %>
-    <% @positionings.each do |score| %>
-     <% @sum += score.positioning %>
-     <% @count += 1 %>
-    <% end %>
-    <%= "#{@sum / @count}pt" %>
+    <%= "#{@positioning}pt" %>
   </div>
-  <%# /positioning %>
-
-  <%# footwork %>
   <div class="score">
-    <% @sum = 0 %>
-    <% @count = 0 %>
-    <% @footworks.each do |score| %>
-     <% @sum += score.footwork %>
-     <% @count += 1 %>
-    <% end %>
-    <%= "#{@sum / @count}pt" %>
+    <%= "#{@footwork}pt" %>
   </div>
-  <%# /footwork %>
-
-  <%# coordination %>
   <div class="score">
-    <% @sum = 0 %>
-    <% @count = 0 %>
-    <% @coordinations.each do |score| %>
-     <% @sum += score.coordination %>
-     <% @count += 1 %>
-    <% end %>
-    <%= "#{@sum / @count}pt" %>
+    <%= "#{@coordination.floor}pt" %>
   </div>
-  <%# /coordination %>
 </div>
+<div class="grade-text">※ 6級(10-14pt)、5級(15-22pt)、4級(23-34pt)、3級(35-52pt)、2級(53-79pt)、1級(80-119pt)、初段(120pt-)</div>
 
 <%= render "shared/footer" %>
