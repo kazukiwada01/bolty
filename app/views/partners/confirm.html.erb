@@ -1,5 +1,6 @@
 <%= render "shared/sub-header" %>
-<div class="form-wrap">
+
+<div class="form-wrap2">
   <div class="form-top">
     <h1 class="h3 mb-3 fw-normal">パートナー登録申込</h1>
     <ul class="nav nav-tabs nav-fill">
@@ -9,14 +10,14 @@
     </ul>
   </div>
 
-  <ul class="confirm">
-    <li class="confirm-item">会社名: <%= @partner.company %></li>
-    <li class="confirm-item">メールアドレス: <%= @partner.email %></li>
-    <li class="confirm-item">お名前: <%= @partner.last_name %> <%= @partner.first_name %></li>
-    <li class="confirm-item">お名前カナ: <%= @partner.last_name_kana %> <%= @partner.first_name_kana %></li>
-    <li class="confirm-item">電話番号: <%= @partner.phone_number %></li>
-    <li class="confirm-item">ご質問・ご要望: <%= @partner.message %></li>
-  </ul>
+  <div class="confirm">
+    <div class="confirm-item">会社名: <%= @partner.company %></div>
+    <div class="confirm-item">メールアドレス: <%= @partner.email %></div>
+    <div class="confirm-item">お名前: <%= @partner.last_name %> <%= @partner.first_name %></div>
+    <div class="confirm-item">お名前カナ: <%= @partner.last_name_kana %> <%= @partner.first_name_kana %></div>
+    <div class="confirm-item">電話番号: <%= @partner.phone_number %></div>
+    <div class="confirm-item">ご質問・ご要望: <%= @partner.message %></div>
+  </div>
   <div class="contact">
     <%= form_for @partner, method: :post, url: partners_done_path do |f| %>
       <%= f.hidden_field :company %>
@@ -38,4 +39,5 @@
     <% end %>
   </div>
 </div>
+
 <%= render "shared/footer" %>
