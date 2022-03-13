@@ -6,6 +6,9 @@
   <div class="top-contents">
     <%= image_tag("top.jpg", class:"top-image") %>
   </div>
+  <div class="top-contents">
+    <%= image_tag("top2.png", class:"top-image2") %>
+  </div>
   <%# /トップ画像を表示 %>
 
   <%# aboutを表示 %>
@@ -46,25 +49,25 @@
   <%= render "shared/gym-list" %> 
   <%# /gym listを表示 %>
 
-  <div class="contact" id="contact">
+  <div class="contact2" id="contact">
     <h1>Contact</h1>
     <div class="list-btn">
       <%= link_to "ジム経営者の方はこちら", partners_new_path, class: "btn btn-outline-dark btn-size4" %>
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">name</label>
+      <label for="exampleFormControlInput1" class="form-label">お名前(全角)</label>
       <input type="name" class="form-control" id="exampleFormControlInput1">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <label for="exampleFormControlInput1" class="form-label">メールアドレス</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">subject</label>
+      <label for="exampleFormControlInput1" class="form-label">タイトル</label>
       <input type="subject" class="form-control" id="exampleFormControlInput1">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">text</label>
+      <label for="exampleFormControlTextarea1" class="form-label">お問合せ内容</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <button type="submit" class="btn btn-secondary submit-btn">送信する</button>
