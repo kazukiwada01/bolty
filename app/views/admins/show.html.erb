@@ -24,38 +24,39 @@
     <%= link_to "パスワードの修正", edit_admin_path, class: "btn btn-outline-dark btn-size5" %>
   </div>
 
-  <div class="gyms">
-    <div class="info-title">
-      <h1 class="h3 mb-3 fw-normal">ジム情報</h1>
-    </div>
-    <% if @gyms[0] == nil %>
-      <div class="gym-text">ジムが登録されていません。</div>
-    <% end %>
-    <% @gyms.each do |gym| %>
-      <div class="info-gym">
-        <%= image_tag gym.image, class:"gym-img" %></div>
-      </div>
-      <div class="info-list">
-        <div class="info-text">ジム名</div>
-        <div class="info"><%= gym.name %></div>
-      </div>
-      <div class="info-list">
-        <div class="info-text">住所</div>
-        <div class="info">
-          <%= gym.prefecture.name %><%= gym.city_name %><%= gym.street %><%= gym.building_name %>
-        </div>
-      </div>
-      <div class="info-list">
-        <div class="info-text">URL</div>
-        <div class="info"><%= gym.gym_url %></div>
-      </div>
-      <div class="info-btn">
-        <%= link_to "編集する", edit_gym_path(gym.id), class: "btn btn-outline-dark btn-size7" %>
-        <%= link_to "課題帳作成ページ", gym_problem_lists_path(gym.id), class: "btn btn-outline-dark btn-size7" %>
-        <%= link_to "削除する", gym_path(gym.id), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-dark btn-size7" %>
-      </div>
-    <% end %>
+  <div class="info-title">
+    <h1 class="h3 mb-3 fw-normal">ジム情報</h1>
   </div>
+  <% if @gyms[0] == nil %>
+    <div class="gym-text">ジムが登録されていません。</div>
+  <% else %>
+    <div class="gyms">
+      <% @gyms.each do |gym| %>
+        <div class="info-gym">
+          <%= image_tag gym.image, class:"gym-img" %>
+        </div>
+        <div class="info-list">
+          <div class="info-text">ジム名</div>
+          <div class="info"><%= gym.name %></div>
+        </div>
+        <div class="info-list">
+          <div class="info-text">住所</div>
+          <div class="info">
+            <%= gym.prefecture.name %><%= gym.city_name %><%= gym.street %><%= gym.building_name %>
+          </div>
+        </div>
+        <div class="info-list">
+          <div class="info-text">URL</div>
+          <div class="info"><%= gym.gym_url %></div>
+        </div>
+        <div class="info-btn">
+          <%= link_to "編集する", edit_gym_path(gym.id), class: "btn btn-outline-dark btn-size7" %>
+          <%= link_to "課題帳作成ページ", gym_problem_lists_path(gym.id), class: "btn btn-outline-dark btn-size7" %>
+          <%= link_to "削除する", gym_path(gym.id), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-dark btn-size7" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <%= render "shared/footer" %>
