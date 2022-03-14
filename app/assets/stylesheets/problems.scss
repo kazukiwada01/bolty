@@ -1,6 +1,6 @@
 .wrapper{
   display: flex;
-  height: 100%;
+  min-height: 100vh;
 }
 .main-problem{
   width: calc(100vw - 380px);
@@ -18,12 +18,27 @@
   width: 420px;
   text-align: center;
   margin: 50px auto;
+  min-height: 100vh;
 }
 .problem-margin{
   margin-top: 30px;
 }
 .btn-margin2{
   margin-top: 50px;
+}
+@media screen and (max-width: 992px) {
+  .main-problem{
+    width: calc(100vw - 40%);
+    text-align: center;
+    margin: 30px 20px;
+  }
+  .side-problem{
+    width: 40%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    border-right: 1px solid;
+  }
 }
 
 /* side-problem */

@@ -5,7 +5,11 @@ class ProblemListsController < ApplicationController
   before_action :gym_check, only: [:edit, :update]
 
   def index
-    @problem_lists = @gym.problem_lists.includes(:gym)
+    if user_signed_in? || admin_signed_in?
+      @problem_lists = @gym.problem_lists.includes(:gym)
+    else
+      redirect_to user_session_path
+    end
   end
 
   def new

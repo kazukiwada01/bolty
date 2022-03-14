@@ -1,7 +1,7 @@
 <div class="change-view">
   <div class="sub-footer">
   <% if user_signed_in? %>
-    <%= link_to "マイページ", "#", class: "btn btn-outline-light sub-btn" %>
+    <%= link_to "マイページ", user_path(current_user), class: "btn btn-outline-light sub-btn" %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-light sub-btn" %>
   <% elsif admin_signed_in? %>
     <%= link_to "ADMIN PAGE", admin_path(current_admin), class: "btn btn-outline-light sub-btn" %>

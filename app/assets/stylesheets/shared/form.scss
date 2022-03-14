@@ -1,9 +1,4 @@
 /* form表示 */
-.form-wrap{
-  width: 100%;
-  height: 100%;
-  padding: 40px 0;
-}
 .nav-tabs{
   margin: 30px 0 !important;
 }
@@ -15,9 +10,15 @@
   border: solid 1px gray;
   border-radius: 5px;
 }
+.contact2{
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
 .contact{
   text-align: center;
-  width: 400px;
+  width: 60%;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -50,10 +51,27 @@
 .form-margin{
   margin-top: 30px;
 }
-
+@media screen and (max-width: 992px) {
+  .forms-wrap{
+    width: 100vw;
+    min-height: 100vh;
+    padding: 40px 30%;
+  }
+}
 /* form表示 */
 
+.form-wrap1{
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 20%;
+}
+.form-wrap2{
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 20%;
+}
 .confirm{
+  width: 100%;
   margin: 50px 30px 0 0;
   list-style:none;
 }
@@ -72,4 +90,16 @@
 .done-btn{
   margin: 20px auto;
   text-align: center;
+}
+@media screen and (max-width: 992px) {
+  .form-wrap1{
+    width: 100vw;
+    min-height: 100vh;
+    padding: 40px;
+  }
+  .form-wrap2{
+    width: 100vw;
+    min-height: 100vh;
+    padding: 40px;
+  }
 }
