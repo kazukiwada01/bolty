@@ -12,24 +12,33 @@
   display: flex;
   margin: 30px auto;
   padding: auto 0;
-  width: 900px;
+  width: 70%;
   border-bottom: solid 1px black ;
 }
 .problem{
   height: 50px;
-  width: 480px;
+  width: 50%;
   font-size: 20px;
   padding: 10px 0 0 10px;
 }
 .btn-size9{
   font-size: 20px !important;
-  width: 200px !important;
+  width: 24% !important;
   height: 45px !important;
-  margin-left: 10px;
+  margin-left: 1%;
 }
 .btn-size10{
   font-size: 20px !important;
-  width: 400px !important;
+  width: 40% !important;
   height: 45px !important;
-  margin-left: 20px;
+  margin-left: 10%;
+}
+@media screen and (max-width: 992px) {
+  .problem-list{
+    display: flex;
+    margin: 30px auto;
+    padding: auto 0;
+    width: 90%;
+    border-bottom: solid 1px black ;
+  } 
 }
