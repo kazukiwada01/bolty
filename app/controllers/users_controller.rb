@@ -58,14 +58,14 @@ class UsersController < ApplicationController
       end
       @footwork = @sum / @count
 
-      @coordinations = @results.order(coordination: :desc).first(5)
+      @coordinations = @results.order(coordination: :desc).first(3)
       @sum = 0
       @count = 0
       @coordinations.each do |score|
         @sum += score.coordination
         @count += 1
       end
-      @coordination = @sum / @count * 1.3
+      @coordination = (@sum * 1.3) / @count
 
       @data = [@holding, @move, @footwork, @coordination, @positioning, @physical]
 
