@@ -1,4 +1,4 @@
-<% if @class.floor <= 139 %>
+<% if @class.floor <= 99 %>
   <div class="class-list">
     <div class="label-img"></div>
     <div class="class-img1">
@@ -12,16 +12,16 @@
     <div class="label-img2">
       <div class ="label">
         <div class="label-text">Middle</div>
-        <div class="label-text">150-249pt</div>
+        <div class="label-text">100-239pt</div>
       </div>
     </div>
   </div>
-<% elsif @class.floor >= 140 && @class.floor <= 249 %>
+<% elsif @class.floor >= 100 && @class.floor <= 239 %>
   <div class="class-list">
     <div class="label-img1">
       <div class ="label">
         <div class="label-text">Beginner</div>
-        <div class="label-text">50-149pt</div>
+        <div class="label-text">0-99pt</div>
       </div>
     </div>
     <div class="arrow">＜</div>
@@ -36,16 +36,16 @@
     <div class="label-img3">
       <div class ="label">
         <div class="label-text">SuperMiddle</div>
-        <div class="label-text">250-399pt</div>
+        <div class="label-text">240-399pt</div>
       </div>
     </div>
   </div>
-<% elsif @class.floor >= 250 && @class.floor <= 399 %>
+<% elsif @class.floor >= 240 && @class.floor <= 399 %>
   <div class="class-list">
     <div class="label-img2">
       <div class ="label">
         <div class="label-text">Middle</div>
-        <div class="label-text">150-249pt</div>
+        <div class="label-text">100-239pt</div>
       </div>
     </div>
     <div class="arrow">＜</div>
@@ -60,16 +60,16 @@
     <div class="label-img4">
       <div class ="label">
         <div class="label-text">Master</div>
-        <div class="label-text">400-599pt</div>
+        <div class="label-text">400-579pt</div>
       </div>
     </div>
   </div>
-<% elsif @class.floor >= 400 && @class.floor <= 599 %>
+<% elsif @class.floor >= 400 && @class.floor <= 579 %>
   <div class="class-list">
     <div class="label-img3">
       <div class ="label">
         <div class="label-text">SuperMiddle</div>
-        <div class="label-text">250-399pt</div>
+        <div class="label-text">240-399pt</div>
       </div>
     </div>
     <div class="arrow">＜</div>
@@ -84,16 +84,16 @@
     <div class="label-img5">
       <div class ="label">
         <div class="label-text">Open</div>
-        <div class="label-text">600-900pt</div>
+        <div class="label-text">580-900pt</div>
       </div>
     </div>
   </div>
-<% elsif @class.floor >= 600 %>
+<% elsif @class.floor >= 580 %>
   <div class="class-list">
     <div class="label-img4">
       <div class ="label">
         <div class="label-text">Master</div>
-        <div class="label-text">400-599pt</div>
+        <div class="label-text">400-579pt</div>
       </div>
     </div>
     <div class="arrow">＜</div>
