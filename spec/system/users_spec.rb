@@ -54,3 +54,44 @@ RSpec.describe 'ユーザー新規登録', type: :system do
     end
   end
 end
+
+RSpec.describe 'ユーザーログイン機能', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+  context 'ユーザーログインができるとき' do
+    it '正しい情報を入力すればユーザーログインに成功し、トップページに遷移する' do
+      # トップページに移動する
+      visit root_path
+      # トップページにサインアップページへ遷移するボタンがあることを確認する
+      expect(page).to have_content('LOG IN')
+      # ログインページへ移動する
+      visit user_session_path
+      # すでに保存されているユーザーのemailとpasswordを入力する
+      fill_in 'Email address', with: @user.email
+      fill_in 'Password(6文字以上の半角英数字)', with: @user.password
+      # ログインボタンをクリックする
+      click_on('Log in')
+      # トップページに遷移していることを確認する
+      expect(current_path).to eq(root_path)
+    end
+  end
+
+  context 'ユーザーログインができないとき' do 
+    it '誤った情報だとログインに失敗し、再びログインページに戻ってくる' do
+      # トップページに移動する
+      visit root_path
+      # トップページにログインページへ遷移するボタンがあることを確認する
+      expect(page).to have_content('LOG IN')
+      # ログインページへ移動する
+      visit user_session_path
+      # 誤ったユーザー情報を入力する
+      fill_in 'Email address', with: ''
+      fill_in 'Password(6文字以上の半角英数字)', with: ''
+      # ログインボタンをクリックする
+      click_on('Log in')
+      # ログインページへ戻されることを確認する
+      expect(current_path).to eq(user_session_path)
+    end
+  end
+end
