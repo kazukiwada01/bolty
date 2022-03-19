@@ -9,7 +9,7 @@ RSpec.describe 'ジム登録', type: :system do
     it '正しい情報を入力すればジム登録できる' do
       # ログインする
       sign_in(@admin)
-      # トップページにパートナー登録申込ページへ遷移するボタンがあることを確認する
+      # パートナー詳細ページにジム登録ページへ遷移するボタンがあることを確認する
       expect(page).to have_content('ADD NEW GYM')
       # ジム登録ページへ移動する
       visit new_gym_path
@@ -27,6 +27,13 @@ RSpec.describe 'ジム登録', type: :system do
       }.to change { Gym.count }.by(1)
       # パートナー詳細ページに遷移していることを確認する
       expect(current_path).to eq(admin_path(@admin))
+      # パートナー詳細ページに先ほど登録したジムが存在することを確認する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      expect(page).to have_content(@gym.name)
+      expect(page).to have_content(@gym.prefecture.name)
+      expect(page).to have_content(@gym.city_name)
+      expect(page).to have_content(@gym.street)
+      expect(page).to have_content(@gym.gym_url)
     end
   end
 
@@ -34,7 +41,7 @@ RSpec.describe 'ジム登録', type: :system do
     it '誤った情報だと登録に失敗し、再びジム登録ページに戻ってくる' do
       # ログインする
       sign_in(@admin)
-      # トップページにパートナー登録申込ページへ遷移するボタンがあることを確認する
+      # パートナー詳細ページにジム登録ページへ遷移するボタンがあることを確認する
       expect(page).to have_content('ADD NEW GYM')
       # ジム登録ページへ移動する
       visit new_gym_path
