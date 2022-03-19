@@ -24,7 +24,7 @@ RSpec.describe 'パートナー登録申込', type: :system do
       click_on('確認画面に進む')
       # 確認画面に遷移していることを確認する
       expect(current_path).to eq(partners_confirm_path)
-      # 登録情報を入力する
+      # 登録情報を確認する
       expect(page).to have_content(@partner.company)
       expect(page).to have_content(@partner.email)
       expect(page).to have_content(@partner.last_name)
