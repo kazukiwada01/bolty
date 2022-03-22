@@ -5,7 +5,7 @@
   </div>
   <%= form_with model: @problem_list, url: gym_problem_list_path, local: true do |f| %>
     <%= render "shared/error_messages", model: f.object %>
-    <div class="contact">
+    <div class="contact3">
       <div class="input-month-wrap">
         <label for="exampleFormControlInput1" class="form-label">課題帳名</label>
         <%= f.text_field :name, class:"form-control", id:"name" ,placeholder:"例) ○月マンスリー" %>
