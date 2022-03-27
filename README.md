@@ -32,14 +32,14 @@ Bolty
 
 ### ユーザー
 
-新規登録またはログイン後、トップページからジムを検索し、ジムページへ遷移
-![u-step2](https://user-images.githubusercontent.com/92724990/160288546-bb81db82-bd57-4f88-8284-4f279821e4a3.gif)
+新規登録またはログイン後、トップページからジムを検索し、ジムページへ遷移<br>
+![u-step2](https://user-images.githubusercontent.com/92724990/160288546-bb81db82-bd57-4f88-8284-4f279821e4a3.gif)<br>
 
-チェックシートを開き完登数を登録
-![u-step3](https://user-images.githubusercontent.com/92724990/160289158-fb8e56f0-63f6-4b95-b0b1-1dea38e9d6ce.gif)
+チェックシートを開き完登数を登録<br>
+![u-step3](https://user-images.githubusercontent.com/92724990/160289158-fb8e56f0-63f6-4b95-b0b1-1dea38e9d6ce.gif)<br>
 
-チェックシート登録後、マイページに遷移すると結果に応じたチャート、スコアが表示されている
-![u-step4](https://user-images.githubusercontent.com/92724990/160289218-b15bad01-f473-453a-b33c-4121eb8f935d.gif)
+チェックシート登録後、マイページに遷移すると結果に応じたチャート、スコアが表示されている<br>
+![u-step4](https://user-images.githubusercontent.com/92724990/160289218-b15bad01-f473-453a-b33c-4121eb8f935d.gif)<br>
 
 ### ジム経営者
 
