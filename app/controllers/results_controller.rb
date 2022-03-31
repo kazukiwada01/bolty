@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create, :edit, :update]
   before_action :set_problem, only: [:edit, :update]
-  before_action :set_result, only: [:edit, :update]
+  before_action :set_result, only: [:edit, :update, :destroy]
 
   def index
     @problem = Problem.find(params[:problem_id])
@@ -18,6 +18,11 @@ class ResultsController < ApplicationController
 
   def update
     @result.update(result_params)
+    redirect_to gym_problem_list_problems_path
+  end
+
+  def destroy
+    @result.delete
     redirect_to gym_problem_list_problems_path
   end
 

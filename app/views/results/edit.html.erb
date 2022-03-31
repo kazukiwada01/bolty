@@ -49,6 +49,7 @@
 
     <div class="result-btn">
       <div><%= f.submit "変更する" ,class:"btn btn-secondary submit-btn" %></div>
+      <div><%= link_to "未登", gym_problem_list_problem_result_path, method: :delete, class: "btn btn-outline-dark submit-btn3" %></div>
       <%= link_to "戻る", gym_problem_list_problems_path, class: "btn btn-outline-dark submit-btn3" %>
     </div>
   <% end %>
