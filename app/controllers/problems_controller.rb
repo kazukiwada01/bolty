@@ -29,7 +29,7 @@ class ProblemsController < ApplicationController
       @problems6 = @problem_list.problems.where(grade_id: 6).order(name: :asc)
       @problems7 = @problem_list.problems.where(grade_id: 7).order(name: :asc)
       @problems8 = @problem_list.problems.where(grade_id: 8).order(name: :asc)
-      @result = Result.find_by(params[problem_id: :problem_id])
+      @result = Result.includes(:user)
     else
       redirect_to user_session_path
     end
