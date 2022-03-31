@@ -33,6 +33,6 @@ class ResultsController < ApplicationController
   end
 
   def set_result
-    @result = Result.find_by(params[problem_id: :problem_id])
+    @result = Result.find(params[:id])
   end
 end

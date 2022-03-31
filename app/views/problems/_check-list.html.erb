@@ -10,7 +10,7 @@
         <% unless problem.results.where(user_id: current_user.id).present? %>
           <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
         <% else %>
-          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem, problem.results.find_by(problem: problem.id)), class: "btn btn-danger btn-size13" %>
         <% end %>
       <% end %>
     </div>
@@ -20,7 +20,7 @@
         <% unless problem.results.where(user_id: current_user.id).present? %>
           <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
         <% else %>
-          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem, problem.results.find_by(problem: problem.id)), class: "btn btn-danger btn-size13" %>
         <% end %>
       <% end %>
     </div>
@@ -30,7 +30,7 @@
         <% unless problem.results.where(user_id: current_user.id).present? %>
           <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
         <% else %>
-          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem, problem.results.find_by(problem: problem.id)), class: "btn btn-danger btn-size13" %>
         <% end %>
       <% end %>
     </div>
@@ -40,7 +40,7 @@
         <% unless problem.results.where(user_id: current_user.id).present? %>
           <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
         <% else %>
-          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem, problem.results.find_by(problem: problem.id)), class: "btn btn-danger btn-size13" %>
         <% end %>
       <% end %>
     </div>
@@ -50,7 +50,7 @@
         <% unless problem.results.where(user_id: current_user.id).present? %>
           <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
         <% else %>
-          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem, problem.results.find_by(problem: problem.id)), class: "btn btn-danger btn-size13" %>
         <% end %>
       <% end %>
     </div>
@@ -60,7 +60,7 @@
         <% unless problem.results.where(user_id: current_user.id).present? %>
           <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
         <% else %>
-          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem, problem.results.find_by(problem: problem.id)), class: "btn btn-danger btn-size13" %>
         <% end %>
       <% end %>
     </div>
@@ -70,7 +70,7 @@
         <% unless problem.results.where(user_id: current_user.id).present? %>
           <%= link_to problem.name, gym_problem_list_problem_results_path(@gym, @problem_list ,problem), class: "btn btn-outline-dark btn-size12" %>
         <% else %>
-          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem,problem.results.where(user_id: current_user.id)), class: "btn btn-danger btn-size13" %>
+          <%= link_to problem.name, edit_gym_problem_list_problem_result_path(@gym, @problem_list ,problem, problem.results.find_by(problem: problem.id)), class: "btn btn-danger btn-size13" %>
         <% end %>
       <% end %>
     </div>
