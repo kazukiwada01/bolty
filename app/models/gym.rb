@@ -1,8 +1,8 @@
 class Gym < ApplicationRecord
   belongs_to :admin
   has_one_attached :image
-  has_many :problem_lists
-  has_many :results
+  has_many :problem_lists, dependent: :destroy
+  has_many :results, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture

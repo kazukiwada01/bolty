@@ -28,7 +28,7 @@ class GymsController < ApplicationController
   end
 
   def destroy
-    @gym.delete
+    @gym.destroy
     redirect_to admin_path(current_admin)
   end
 
